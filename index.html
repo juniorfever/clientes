@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhos — sites sob medida</title>
+    <meta name="description" content="Sites estáticos premium feitos sob medida para negócios locais.">
+    <style>
+        :root {
+            --papel: #F7F4EE;
+            --tinta: #30414F;
+            --tinta-clara: #5C6E79;
+            --terracota: #C97B55;
+            --linha: #DDD5C7;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--papel);
+            color: var(--tinta);
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 72px 24px; }
+        h1 { font-size: 2.1rem; margin: 0 0 10px; }
+        p.intro { color: var(--tinta-clara); max-width: 56ch; margin: 0 0 48px; }
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        a.card {
+            display: block;
+            padding: 22px;
+            border: 1px solid var(--linha);
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            transition: border-color .15s ease, transform .15s ease;
+        }
+        a.card:hover { border-color: var(--terracota); transform: translateY(-2px); }
+        .card h2 { font-size: 1.1rem; margin: 0 0 6px; }
+        .card .segmento { font-size: .85rem; color: var(--tinta-clara); margin: 0 0 14px; }
+        .selo {
+            display: inline-block;
+            font-size: .72rem;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: var(--terracota);
+            color: #fff;
+        }
+        .selo--exemplo { background: var(--linha); color: var(--tinta-clara); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sites feitos sob medida</h1>
+        <p class="intro">Projetos de sites estáticos premium para negócios locais — rápidos, com identidade própria
+            e pensados pra converter visita em contato.</p>
+
+        <div class="grade">
+            <a class="card" href="cleo-ribeiro-main/">
+                <span class="selo">Cliente</span>
+                <h2 style="margin-top:10px">Cleo Ribeiro</h2>
+                <p class="segmento">Psicóloga · Porto Alegre e online</p>
+            </a>
+            <a class="card" href="barbara-ricci-main/">
+                <span class="selo selo--exemplo">Exemplo do nosso trabalho</span>
+                <h2 style="margin-top:10px">Barbara Ricci</h2>
+                <p class="segmento">Nutricionista clínica · Novo Hamburgo</p>
+            </a>
+            <a class="card" href="Carolina-Guaragna-main/">
+                <span class="selo selo--exemplo">Exemplo do nosso trabalho</span>
+                <h2 style="margin-top:10px">Carolina Guaragna</h2>
+                <p class="segmento">Psicóloga e psicanalista · Porto Alegre</p>
+            </a>
+            <a class="card" href="Daniela-dalberto-main/">
+                <span class="selo selo--exemplo">Exemplo do nosso trabalho</span>
+                <h2 style="margin-top:10px">Daniela Dalberto</h2>
+                <p class="segmento">Advogada · Família, sucessões e trabalhista</p>
+            </a>
+            <a class="card" href="formato-contabil-main/">
+                <span class="selo selo--exemplo">Exemplo do nosso trabalho</span>
+                <h2 style="margin-top:10px">Formato Contábil</h2>
+                <p class="segmento">Contabilidade · Porto Alegre</p>
+            </a>
+            <a class="card" href="buriti-garden-main/">
+                <span class="selo selo--exemplo">Exemplo do nosso trabalho</span>
+                <h2 style="margin-top:10px">Residencial Buriti Garden</h2>
+                <p class="segmento">Empreendimento · São Leopoldo, RS</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

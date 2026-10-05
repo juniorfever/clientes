@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbara Ricci | Nutricionista Clínica em Novo Hamburgo</title>
+    <meta name="description" content="Nutricionista clínica em Novo Hamburgo. Reeducação alimentar, emagrecimento, hipertrofia e tratamento de doenças crônicas não transmissíveis. Agende pelo WhatsApp.">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="container topo__grade">
+            <a href="#inicio" class="marca">
+                <img src="assets/img/logo-original.png" alt="Barbara Ricci" width="44" height="34">
+                <span>Barbara Ricci</span>
+            </a>
+            <nav class="nav" aria-label="Navegação principal">
+                <a href="#servicos">Atendimentos</a>
+                <a href="#funciona">Como funciona</a>
+                <a href="#local">Endereço</a>
+            </nav>
+            <a class="btn btn--principal btn--topo"
+                href="https://wa.me/5551999212321?text=Ol%C3%A1%2C%20Barbara!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                target="_blank" rel="noopener">Agendar consulta</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container hero__grade">
+                <div class="hero__texto revelar">
+                    <span class="rotulo">Nutrição clínica em Novo Hamburgo, RS</span>
+                    <h1>Um plano alimentar pensado pra sua rotina, não pra sua força de vontade.</h1>
+                    <p class="hero__intro">Atendimento individual e presencial em Novo Hamburgo, em reeducação
+                        alimentar, emagrecimento, hipertrofia e no manejo nutricional de doenças crônicas não
+                        transmissíveis.</p>
+                    <div class="hero__acoes">
+                        <a class="btn btn--principal"
+                            href="https://wa.me/5551999212321?text=Ol%C3%A1%2C%20Barbara!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                            target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+                        <a class="btn btn--fantasma" href="#servicos">Ver atendimentos</a>
+                    </div>
+                </div>
+                <div class="hero__ficha revelar">
+                    <form class="ficha" id="form-contato" novalidate>
+                        <span class="ficha__aba">Ficha de atendimento</span>
+                        <div class="ficha__campos">
+                            <label class="campo">
+                                <span>Nome</span>
+                                <input type="text" name="nome" autocomplete="name" required>
+                            </label>
+                            <label class="campo">
+                                <span>Telefone</span>
+                                <input type="tel" name="telefone" autocomplete="tel" placeholder="(51) 9xxxx-xxxx"
+                                    required>
+                            </label>
+                            <label class="campo">
+                                <span>Mensagem</span>
+                                <textarea name="mensagem" rows="2" placeholder="O que você gostaria de tratar?"></textarea>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn--principal ficha__enviar">
+                            <span class="ficha__texto-botao">Enviar pelo WhatsApp</span>
+                        </button>
+                        <p class="ficha__aviso" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="servicos">
+            <div class="container">
+                <div class="servicos__cabecalho revelar">
+                    <span class="rotulo">Atendimentos</span>
+                    <h2>Um consultório só, do emagrecimento ao cuidado com doenças crônicas.</h2>
+                </div>
+                <ol class="servicos__lista">
+                    <li class="revelar">
+                        <span class="servicos__num">01</span>
+                        <div>
+                            <h3>Reeducação alimentar</h3>
+                            <p>Construção de hábitos alimentares sustentáveis, sem dietas restritivas, pra rotina
+                                continuar funcionando depois da consulta.</p>
+                        </div>
+                    </li>
+                    <li class="revelar">
+                        <span class="servicos__num">02</span>
+                        <div>
+                            <h3>Emagrecimento</h3>
+                            <p>Plano alimentar individualizado com acompanhamento de evolução, ajustado conforme a
+                                resposta do seu corpo.</p>
+                        </div>
+                    </li>
+                    <li class="revelar">
+                        <span class="servicos__num">03</span>
+                        <div>
+                            <h3>Hipertrofia</h3>
+                            <p>Estratégia nutricional voltada a ganho de massa magra, alinhada com o seu treino e sua
+                                rotina de refeições.</p>
+                        </div>
+                    </li>
+                    <li class="revelar">
+                        <span class="servicos__num">04</span>
+                        <div>
+                            <h3>Doenças crônicas não transmissíveis</h3>
+                            <p>Acompanhamento nutricional de condições como diabetes, hipertensão e dislipidemias,
+                                junto com o restante do seu tratamento.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="funciona" class="funciona">
+            <div class="container funciona__grade">
+                <div class="revelar">
+                    <span class="rotulo">Como funciona</span>
+                    <h2>Três etapas, sem enrolação.</h2>
+                </div>
+                <ol class="funciona__passos">
+                    <li class="revelar">
+                        <strong>Primeira consulta</strong>
+                        <p>Conversamos sobre sua rotina, histórico e objetivo. É a partir disso que o plano é
+                            construído, não de uma tabela pronta.</p>
+                    </li>
+                    <li class="revelar">
+                        <strong>Plano alimentar</strong>
+                        <p>Você recebe um plano individualizado, compatível com o que você já come e com o seu
+                            dia a dia.</p>
+                    </li>
+                    <li class="revelar">
+                        <strong>Retornos</strong>
+                        <p>Acompanhamento e ajustes nas consultas seguintes, conforme sua evolução.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="local" class="local">
+            <div class="container local__grade">
+                <div class="revelar">
+                    <span class="rotulo">Atendimento</span>
+                    <h2>Consultório em Novo Hamburgo.</h2>
+                    <ul class="local__lista">
+                        <li>
+                            <span class="local__rotulo">Endereço</span>
+                            <span>Av. Nações Unidas, 2475, sala 1404, Rio Branco, Novo Hamburgo, RS</span>
+                        </li>
+                        <li>
+                            <span class="local__rotulo">Horário</span>
+                            <span>Segunda a sábado, das 8h às 20h</span>
+                        </li>
+                        <li>
+                            <span class="local__rotulo">WhatsApp</span>
+                            <a href="https://wa.me/5551999212321" target="_blank" rel="noopener">(51) 99921-2321</a>
+                        </li>
+                        <li>
+                            <span class="local__rotulo">Instagram</span>
+                            <a href="https://instagram.com/nutribarbararicci" target="_blank"
+                                rel="noopener">@nutribarbararicci</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn--principal" style="margin-top:28px"
+                        href="https://wa.me/5551999212321?text=Ol%C3%A1%2C%20Barbara!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                        target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+                </div>
+                <div class="local__mapa revelar">
+                    <iframe
+                        src="https://www.google.com/maps?q=Av.+Na%C3%A7%C3%B5es+Unidas,+2475,+Novo+Hamburgo,+RS&output=embed"
+                        width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Mapa até o consultório"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape__grade">
+            <div class="marca">
+                <img src="assets/img/logo-original.png" alt="Barbara Ricci" width="40" height="31">
+                <span>Barbara Ricci</span>
+            </div>
+            <p>Nutricionista clínica em Novo Hamburgo, RS</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
