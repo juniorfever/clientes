@@ -157,17 +157,31 @@ a:focus-visible, button:focus-visible {
     position: relative;
     overflow: hidden;
     padding: 72px 0 96px;
-    background-image: url('assets/img/barbara-hero.jpg');
-    background-size: cover;
-    background-position: center 20%;
 }
 
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
+    background-image: url('assets/img/barbara-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-size: contain;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 82%, transparent 100%);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: var(--papel);
-    opacity: .88;
+    opacity: .4;
+}
+
+@media (max-width: 879px) {
+    .hero::before { background-size: cover; }
+    .hero::after { opacity: .72; }
 }
 
 .hero__grade {
