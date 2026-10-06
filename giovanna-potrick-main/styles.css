@@ -249,26 +249,27 @@ a:focus-visible, button:focus-visible {
 }
 
 .hero__foto {
-    position: relative;
     display: flex;
     justify-content: center;
 }
 
-.hero__foto::before {
-    content: '';
-    position: absolute;
-    inset: 4% 8%;
+.hero__foto__moldura {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
     background: var(--menta);
-    opacity: .25;
-    border-radius: 58% 42% 48% 52% / 46% 54% 46% 54%;
-    z-index: 0;
+    overflow: hidden;
 }
 
 .hero__foto img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 380px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 128%;
+    max-width: none;
     height: auto;
 }
 
