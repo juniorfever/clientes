@@ -253,6 +253,11 @@ a:focus-visible, button:focus-visible {
     justify-content: center;
 }
 
+/* Abaixo de 880px a foto sai do hero e entra na seção de formação (pedido do usuário) */
+@media (max-width: 879px) {
+    .hero__foto { display: none; }
+}
+
 .hero__foto__moldura {
     position: relative;
     width: 100%;
@@ -352,6 +357,17 @@ a:focus-visible, button:focus-visible {
 .sobre { background: var(--slate); padding: 90px 0; }
 
 .sobre__grade { max-width: 640px; }
+
+.sobre__foto {
+    display: none;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 0 28px;
+}
+
+@media (max-width: 879px) {
+    .sobre__foto { display: block; }
+}
 
 .sobre__nome {
     color: var(--branco);
