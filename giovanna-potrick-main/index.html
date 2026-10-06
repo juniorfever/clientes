@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="assets/img/logo-transparente.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="hero__foto revelar">
-                        <div class="hero__foto__moldura">
+                        <div class="retrato">
                             <img src="assets/img/giovanna-foto.png" alt="Giovanna Potrick, nutricionista" width="442"
                                 height="600" loading="eager">
                         </div>
@@ -63,14 +63,16 @@
 
         <section class="missao">
             <div class="missao__textura" aria-hidden="true"></div>
-            <div class="container missao__conteudo revelar">
-                <h2>O que é o acompanhamento</h2>
-                <p class="missao__lead">Nutrição a serviço do tratamento, não o contrário</p>
-                <p>Mais do que uma dieta: é preparo e adequação nutricional pra cada etapa do tratamento
-                    oncológico, com foco em manter qualidade de vida, prevenir e amenizar sintomas.</p>
-                <a class="btn btn--escuro"
-                    href="https://wa.me/5551992171003?text=Ol%C3%A1%2C%20Giovanna!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
-                    target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+            <div class="container">
+                <div class="missao__conteudo revelar">
+                    <h2>O que é o acompanhamento</h2>
+                    <p class="missao__lead">Nutrição a serviço do tratamento, não o contrário</p>
+                    <p>Mais do que uma dieta: é preparo e adequação nutricional pra cada etapa do tratamento
+                        oncológico, com foco em manter qualidade de vida, prevenir e amenizar sintomas.</p>
+                    <a class="btn btn--escuro"
+                        href="https://wa.me/5551992171003?text=Ol%C3%A1%2C%20Giovanna!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                        target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+                </div>
             </div>
         </section>
 
@@ -107,7 +109,7 @@
             <div class="container sobre__grade">
                 <div class="revelar">
                     <div class="sobre__foto">
-                        <div class="hero__foto__moldura">
+                        <div class="retrato">
                             <img src="assets/img/giovanna-foto.png" alt="Giovanna Potrick, nutricionista" width="442"
                                 height="600" loading="lazy">
                         </div>
@@ -134,18 +136,15 @@
                 </div>
                 <div class="funciona__linha">
                     <div class="funciona__passo revelar">
-                        <span class="funciona__semana">Passo 1</span>
                         <h3>Agendamento</h3>
                         <p>Você chama no WhatsApp e combina o melhor formato: presencial, online ou
                             domiciliar.</p>
                     </div>
                     <div class="funciona__passo revelar">
-                        <span class="funciona__semana">Passo 2</span>
                         <h3>Primeira consulta</h3>
                         <p>Avaliação completa do momento do tratamento e construção do plano nutricional.</p>
                     </div>
                     <div class="funciona__passo revelar">
-                        <span class="funciona__semana">Passo 3</span>
                         <h3>Acompanhamento</h3>
                         <p>Retornos pra ajustar a dietoterapia conforme o tratamento avança.</p>
                     </div>
@@ -156,10 +155,10 @@
         <section id="locais" class="locais">
             <div class="container locais__grade">
                 <div class="revelar">
-                    <span class="rotulo rotulo--claro">/ atendimento /</span>
+                    <span class="rotulo">/ atendimento /</span>
                     <h2>Dois consultórios, Porto Alegre e São Leopoldo</h2>
                     <p>Também disponível online e domiciliar.</p>
-                    <a class="btn btn--principal" style="margin-top:24px"
+                    <a class="btn btn--principal" style="margin-top:20px"
                         href="https://wa.me/5551992171003?text=Ol%C3%A1%2C%20Giovanna!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
                         target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
                 </div>
@@ -197,9 +196,32 @@
     </a>
 
     <footer class="rodape">
-        <div class="container rodape__grade">
-            <img src="assets/img/logo-transparente.png" alt="Giovanna Potrick" height="26">
-            <p>Nutrição clínica e oncológica em Porto Alegre e São Leopoldo</p>
+        <div class="container">
+            <div class="rodape__grade">
+                <div class="rodape__marca">
+                    <img src="assets/img/logo-transparente.png" alt="Giovanna Potrick" height="30">
+                    <p>Nutrição clínica e oncológica, com atendimento humanizado em cada fase do tratamento.</p>
+                </div>
+                <div>
+                    <span class="rodape__titulo">Contato</span>
+                    <ul class="rodape__lista">
+                        <li><a href="https://wa.me/5551992171003" target="_blank" rel="noopener">(51)
+                                99217-1003</a></li>
+                        <li><a href="https://instagram.com/nutrigiovannapotrick" target="_blank"
+                                rel="noopener">@nutrigiovannapotrick</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="rodape__titulo">Consultórios</span>
+                    <ul class="rodape__lista">
+                        <li>Av. Mariland, 777, sala 604<br>Porto Alegre</li>
+                        <li>R. Bento Gonçalves, 1455, sala 2<br>São Leopoldo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rodape__base">
+                <p>Giovanna Potrick Stefani, nutricionista.</p>
+            </div>
         </div>
     </footer>
 
