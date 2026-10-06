@@ -16,13 +16,12 @@
     <header class="topo">
         <div class="container topo__grade">
             <a href="#inicio" class="marca">
-                <img src="assets/img/logo.png" alt="Gladis Feldmann" height="42">
+                <img src="assets/img/logo.png" alt="Gladis Feldmann" height="40">
                 <span>Gladis Feldmann</span>
             </a>
             <nav class="nav">
-                <a href="#sobre">Sobre</a>
+                <a href="#abordagem">Abordagem</a>
                 <a href="#atendimentos">Atendimentos</a>
-                <a href="#metodo">Método</a>
                 <a href="#locais">Locais</a>
             </nav>
         </div>
@@ -30,47 +29,41 @@
 
     <main>
         <section class="hero" id="inicio">
+            <div class="hero__mancha" aria-hidden="true"></div>
             <div class="container hero__grade">
                 <div class="hero__texto revelar">
-                    <div class="hero__badges">
-                        <span class="badge">Nutrição integrativa</span>
-                        <span class="badge">Ivoti e Estância Velha</span>
-                    </div>
-                    <h1>Não acredito em dietas restritivas, nem no tradicional "fechar a boca".</h1>
+                    <span class="rotulo">Nutrição sem dietas restritivas</span>
+                    <h1>Não acredito em dietas restritivas, nem no tradicional
+                        <span class="destaque">"fechar a boca"</span>.</h1>
                     <p class="hero__intro">Alimentação livre, consciente e segura, que respeita suas
                         particularidades em vez de lutar contra elas.</p>
-                    <ul class="hero__checks">
-                        <li>Presencial ou online</li>
-                        <li>Dois consultórios, Ivoti e Estância Velha</li>
-                        <li>CRN 19088D</li>
-                    </ul>
                     <div class="hero__acoes">
                         <a class="btn btn--principal"
                             href="https://wa.me/5551998742755?text=Ol%C3%A1%2C%20Gladis!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
                             target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-                        <a class="link-seta" href="#sobre">Conhecer a abordagem</a>
+                        <a class="btn btn--contorno" href="#abordagem">Conhecer a abordagem</a>
                     </div>
+                    <dl class="hero__fatos">
+                        <div>
+                            <dt>CRN</dt>
+                            <dd>19088D</dd>
+                        </div>
+                        <div>
+                            <dt>Consultórios</dt>
+                            <dd>Ivoti e Estância Velha</dd>
+                        </div>
+                        <div>
+                            <dt>Modalidade</dt>
+                            <dd>Presencial ou online</dd>
+                        </div>
+                    </dl>
                 </div>
-                <div class="hero__marca revelar" aria-hidden="true">
-                    <div class="anel anel--1"></div>
-                    <div class="anel anel--2"></div>
-                    <img src="assets/img/logo.png" alt="" width="512" height="512">
-                </div>
-            </div>
-        </section>
-
-        <section class="missao" id="sobre">
-            <div class="missao__textura" aria-hidden="true"></div>
-            <div class="container">
-                <div class="missao__conteudo revelar">
-                    <span class="rotulo rotulo--claro">/ abordagem /</span>
-                    <h2>Entender a comida, não brigar com ela</h2>
-                    <p>A alimentação não é só resposta à fome física: é uma combinação de fatores emocionais,
-                        culturais e sociais. Em vez de lutar contra isso, o acompanhamento ajusta o que for
-                        necessário pra alcançar seus objetivos, respeitando suas particularidades.</p>
-                    <a class="btn btn--escuro"
-                        href="https://wa.me/5551998742755?text=Ol%C3%A1%2C%20Gladis!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
-                        target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+                <div class="hero__selo revelar" aria-hidden="true">
+                    <span class="ponto ponto--1"></span>
+                    <span class="ponto ponto--2"></span>
+                    <div class="selo">
+                        <img src="assets/img/logo.png" alt="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -78,43 +71,76 @@
         <section id="atendimentos" class="atendimentos">
             <div class="container">
                 <div class="atendimentos__cabecalho revelar">
-                    <span class="rotulo">/ atendimentos /</span>
-                    <h2>Um consultório só, da estética ao clínico</h2>
-                    <p>Sete frentes de cuidado, conforme a necessidade de cada paciente.</p>
+                    <span class="rotulo rotulo--centro">O que trato</span>
+                    <h2>Sete frentes de cuidado</h2>
+                    <p>Um consultório só, da estética ao clínico, conforme a necessidade de cada paciente.</p>
                 </div>
                 <div class="atendimentos__grade">
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">01</span>
+                        <span class="atendimento-card__icone icone--1">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.3C10.5 6.2 12 5 14 5c3.5 0 5.5 3.5 3.5 7.5C15 16.65 12 21 12 21z" />
+                            </svg>
+                        </span>
                         <h3>Emagrecimento saudável</h3>
                         <p>Abordagem integrativa, mantendo os alimentos que você gosta.</p>
                     </div>
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">02</span>
+                        <span class="atendimento-card__icone icone--2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 12h4l2-7 4 14 2-7h6" />
+                            </svg>
+                        </span>
                         <h3>Doenças crônicas</h3>
                         <p>Diabetes, hipertensão, colesterol e triglicerídeos elevados, tireoide.</p>
                     </div>
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">03</span>
+                        <span class="atendimento-card__icone icone--3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3a5 5 0 015 5c0 3-2 4-2 7a3 3 0 01-6 0c0-3-2-4-2-7a5 5 0 015-5z" />
+                                <path d="M9 21h6" />
+                            </svg>
+                        </span>
                         <h3>Autoimunes e intolerâncias</h3>
                         <p>Hashimoto, lúpus, doença celíaca, intolerância à lactose.</p>
                     </div>
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">04</span>
+                        <span class="atendimento-card__icone icone--4">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M5 21c0-4 3-6 7-6s7 2 7 6" />
+                            </svg>
+                        </span>
                         <h3>Pré e pós-bariátrica</h3>
                         <p>Nutrição personalizada antes e depois da cirurgia.</p>
                     </div>
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">05</span>
+                        <span class="atendimento-card__icone icone--5">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+                            </svg>
+                        </span>
                         <h3>Gestantes</h3>
                         <p>Adequação nutricional conforme o trimestre da gestação.</p>
                     </div>
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">06</span>
+                        <span class="atendimento-card__icone icone--6">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M7 3c0 5-4 6-4 11a5 5 0 0010 0c0-3-2-4-2-7" />
+                                <path d="M15 8c2 1 3 3 3 6a5 5 0 01-2 4" />
+                            </svg>
+                        </span>
                         <h3>Doenças inflamatórias intestinais</h3>
                         <p>Intestino irritável, Crohn, retocolite, constipação crônica.</p>
                     </div>
                     <div class="atendimento-card revelar">
-                        <span class="atendimento-card__num">07</span>
+                        <span class="atendimento-card__icone icone--7">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M9 10h.01M15 10h.01M8 15c1.3 1 2.6 1.5 4 1.5s2.7-.5 4-1.5" />
+                            </svg>
+                        </span>
                         <h3>Compulsão alimentar</h3>
                         <p>Acompanhamento pra controle de vontades impulsivas.</p>
                     </div>
@@ -122,57 +148,76 @@
             </div>
         </section>
 
-        <section id="metodo" class="metodo">
-            <div class="container">
-                <div class="metodo__cabecalho revelar">
-                    <span class="rotulo rotulo--claro">/ método /</span>
-                    <h2>Um tripé, não só uma dieta</h2>
+        <section id="abordagem" class="abordagem">
+            <div class="container abordagem__grade">
+                <div class="abordagem__visual revelar" aria-hidden="true">
+                    <div class="abordagem__mancha"></div>
+                    <div class="abordagem__cartao">
+                        <span class="abordagem__cartao-rotulo">Método</span>
+                        <strong>Nutricional + Comportamental + Emocional</strong>
+                    </div>
                 </div>
-                <div class="metodo__linha">
-                    <div class="metodo__pilar revelar">
-                        <h3>Nutricional</h3>
-                        <p>Plano alimentar ajustado à sua rotina e aos seus objetivos.</p>
-                    </div>
-                    <div class="metodo__pilar revelar">
-                        <h3>Comportamental</h3>
-                        <p>Entender o porquê das escolhas alimentares, não só o que comer.</p>
-                    </div>
-                    <div class="metodo__pilar revelar">
-                        <h3>Emocional</h3>
-                        <p>A relação com a comida também é uma relação emocional.</p>
-                    </div>
+                <div class="revelar">
+                    <span class="rotulo">Abordagem</span>
+                    <h2>Entender a comida, não brigar com ela</h2>
+                    <p>A alimentação não é só resposta à fome física: é uma combinação de fatores emocionais,
+                        culturais e sociais. O acompanhamento ajusta o que for necessário pra alcançar seus
+                        objetivos, respeitando suas particularidades.</p>
+                    <ol class="passos">
+                        <li>
+                            <span class="passos__num">01</span>
+                            <div>
+                                <strong>Nutricional</strong>
+                                <p>Plano alimentar ajustado à sua rotina e aos seus objetivos.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="passos__num">02</span>
+                            <div>
+                                <strong>Comportamental</strong>
+                                <p>Entender o porquê das escolhas alimentares, não só o que comer.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="passos__num">03</span>
+                            <div>
+                                <strong>Emocional</strong>
+                                <p>A relação com a comida também é uma relação emocional.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <a class="btn btn--principal" style="margin-top:8px"
+                        href="https://wa.me/5551998742755?text=Ol%C3%A1%2C%20Gladis!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                        target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
                 </div>
             </div>
         </section>
 
         <section id="locais" class="locais">
-            <div class="container locais__grade">
-                <div class="revelar">
-                    <span class="rotulo">/ atendimento /</span>
-                    <h2>Dois consultórios, Ivoti e Estância Velha</h2>
-                    <p>Também disponível online.</p>
-                    <a class="btn btn--principal" style="margin-top:20px"
+            <div class="container">
+                <div class="locais__cabecalho revelar">
+                    <span class="rotulo rotulo--centro">Atendimento</span>
+                    <h2>Onde me encontrar</h2>
+                </div>
+                <div class="locais__lista">
+                    <div class="locais__item revelar">
+                        <span class="locais__cidade">Ivoti</span>
+                        <p>R. Albino Kern, 1719, Bairro Sete de Setembro</p>
+                    </div>
+                    <div class="locais__item revelar">
+                        <span class="locais__cidade">Estância Velha</span>
+                        <p>Av. Brasil, 300, sala 209, Centro</p>
+                    </div>
+                    <div class="locais__item revelar">
+                        <span class="locais__cidade">Online</span>
+                        <p>Consulta por videochamada, de onde você estiver</p>
+                    </div>
+                </div>
+                <div class="locais__cta revelar">
+                    <a class="btn btn--principal"
                         href="https://wa.me/5551998742755?text=Ol%C3%A1%2C%20Gladis!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
                         target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-                </div>
-                <div class="locais__cards">
-                    <div class="local-card revelar">
-                        <span class="local-card__cidade">Ivoti</span>
-                        <p>R. Albino Kern, 1719<br>Bairro Sete de Setembro</p>
-                    </div>
-                    <div class="local-card revelar">
-                        <span class="local-card__cidade">Estância Velha</span>
-                        <p>Av. Brasil, 300, sala 209<br>Centro</p>
-                    </div>
-                    <div class="local-card revelar">
-                        <span class="local-card__cidade">WhatsApp</span>
-                        <p><a href="https://wa.me/5551998742755" target="_blank" rel="noopener">(51) 99874-2755</a>
-                        </p>
-                    </div>
-                    <div class="local-card revelar">
-                        <span class="local-card__cidade">CRN</span>
-                        <p>19088D</p>
-                    </div>
+                    <span>(51) 99874-2755</span>
                 </div>
             </div>
         </section>
@@ -188,32 +233,16 @@
     </a>
 
     <footer class="rodape">
-        <div class="container">
-            <div class="rodape__grade">
-                <div class="rodape__marca">
-                    <img src="assets/img/logo.png" alt="Gladis Feldmann" height="36">
-                    <p>Nutrição integrativa: nutricional, comportamental e emocional, sem dietas
-                        restritivas.</p>
-                </div>
-                <div>
-                    <span class="rodape__titulo">Contato</span>
-                    <ul class="rodape__lista">
-                        <li><a href="https://wa.me/5551998742755" target="_blank" rel="noopener">(51)
-                                99874-2755</a></li>
-                        <li>CRN 19088D</li>
-                    </ul>
-                </div>
-                <div>
-                    <span class="rodape__titulo">Consultórios</span>
-                    <ul class="rodape__lista">
-                        <li>R. Albino Kern, 1719<br>Ivoti</li>
-                        <li>Av. Brasil, 300, sala 209<br>Estância Velha</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="rodape__base">
-                <p>Gladis Feldmann, nutricionista.</p>
-            </div>
+        <div class="container rodape__grade">
+            <a href="#inicio" class="marca">
+                <img src="assets/img/logo.png" alt="Gladis Feldmann" height="34">
+                <span>Gladis Feldmann</span>
+            </a>
+            <ul class="rodape__links">
+                <li><a href="https://wa.me/5551998742755" target="_blank" rel="noopener">(51) 99874-2755</a></li>
+                <li>CRN 19088D</li>
+                <li>Ivoti · Estância Velha</li>
+            </ul>
         </div>
     </footer>
 
