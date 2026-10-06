@@ -493,7 +493,8 @@ a:focus-visible, button:focus-visible {
 .sobre__foto { display: none; width: 180px; margin: 0 0 30px; }
 
 @media (max-width: 767px) {
-    .sobre__foto { display: block; }
+    .sobre__foto { display: block; 
+    justify-self: center;}
 }
 
 .sobre__nome {
