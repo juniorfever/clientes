@@ -12,7 +12,7 @@
     --linha: #E6D9D1;
 
     --display: 'Cormorant Garamond', serif;
-    --sans: 'Outfit', sans-serif;
+    --sans: 'Albert Sans', sans-serif;
 
     --margem: 6vw;
     --folha: 56px 0 56px 0;
@@ -150,6 +150,11 @@ a:focus-visible, button:focus-visible {
     .topo__cta { margin-left: 0; }
 }
 
+@media (max-width: 1039.98px) {
+    .topo { justify-content: center; }
+    .topo__cta { display: none; }
+}
+
 /* ---------- botões ---------- */
 
 .botao {
@@ -215,13 +220,17 @@ a:focus-visible, button:focus-visible {
 
 .hero__linha {
     font-size: .8rem;
-    letter-spacing: .1em;
+    letter-spacing: 0;
     text-transform: uppercase;
     color: var(--rosewood);
     margin-bottom: 26px;
 }
 
 .hero__linha span { color: var(--blush); margin: 0 6px; }
+
+@media (min-width: 900px) {
+    .hero__linha { letter-spacing: .1em; }
+}
 
 .hero__corpo { max-width: 46ch; margin-bottom: 32px; }
 
@@ -238,12 +247,16 @@ a:focus-visible, button:focus-visible {
 
 .hero__foto {
     position: relative;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 48px var(--margem);
     background: var(--blush-fundo);
     min-height: 360px;
+}
+
+@media (min-width: 900px) {
+    .hero__foto { display: flex; }
 }
 
 .hero__foto::before {
@@ -378,9 +391,19 @@ a:focus-visible, button:focus-visible {
 
 .sobre__retrato img {
     width: 100%;
+    height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: var(--folha);
+}
+
+.sobre__retrato--mobile img { object-position: center 25%; }
+
+.sobre__retrato--desktop { display: none; }
+
+@media (min-width: 900px) {
+    .sobre__retrato--mobile { display: none; }
+    .sobre__retrato--desktop { display: block; order: -1; }
 }
 
 .sobre__lead {
@@ -529,7 +552,7 @@ a:focus-visible, button:focus-visible {
 
 .rodape__marca { display: flex; align-items: center; gap: 12px; }
 
-.rodape__marca span {
+.rodape__nome {
     display: flex;
     flex-direction: column;
     font-family: var(--display);
@@ -538,7 +561,7 @@ a:focus-visible, button:focus-visible {
     line-height: 1.25;
 }
 
-.rodape__marca small {
+.rodape__nome small {
     font-family: var(--sans);
     font-size: .62rem;
     letter-spacing: .16em;
@@ -550,6 +573,11 @@ a:focus-visible, button:focus-visible {
 .rodape__contato { display: flex; flex-direction: column; gap: 4px; text-align: right; }
 .rodape__contato a { color: var(--creme); }
 .rodape__contato a:hover { color: var(--blush); }
+
+@media (max-width: 899.98px) {
+    .rodape { flex-direction: column; align-items: center; text-align: center; }
+    .rodape__contato { align-items: center; text-align: center; }
+}
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
