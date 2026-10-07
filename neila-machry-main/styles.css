@@ -223,8 +223,6 @@ a:focus-visible, button:focus-visible {
 
 .hero__linha span { color: var(--blush); margin: 0 6px; }
 
-.hero h1 { max-width: 13ch; }
-
 .hero__corpo { max-width: 46ch; margin-bottom: 32px; }
 
 .hero__acoes { display: flex; flex-wrap: wrap; gap: 14px; }
