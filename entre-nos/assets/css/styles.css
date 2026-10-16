@@ -1,0 +1,831 @@
+/* ==========================================================================
+   ENTRE NÓS — Folha de estilo principal (mobile-first)
+   Depende de tokens.css
+   ========================================================================== */
+
+/* ---------- Reset enxuto ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-size: var(--fs-corpo);
+  line-height: var(--lh-corpo);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg, video { max-width: 100%; display: block; height: auto; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  line-height: var(--lh-titulo);
+  letter-spacing: var(--ls-titulo);
+  margin: 0 0 var(--e-3);
+  color: var(--texto);
+}
+h1 { font-size: var(--fs-h1); font-weight: 600; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+p  { margin: 0 0 var(--e-3); max-width: var(--largura-texto); }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--cor-dourado-escuro);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Utilidades ---------- */
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.secao { padding-block: var(--e-6); }
+.secao--alt { background: var(--fundo-alt); }
+@media (min-width: 768px) { .secao { padding-block: var(--e-7); } }
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--cor-dourado-escuro);
+  font-weight: 500;
+  margin: 0 0 var(--e-3);
+}
+.lead { font-size: var(--fs-lead); color: var(--texto-suave); }
+.centro { text-align: center; margin-inline: auto; }
+.centro p { margin-inline: auto; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+/* O link "Ir para o conteudo" reaparece quando recebe foco pelo teclado. */
+a.sr-only:focus {
+  position: fixed; top: 10px; left: 10px; z-index: 100;
+  width: auto; height: auto; margin: 0; padding: var(--e-3) var(--e-5);
+  overflow: visible; clip: auto; white-space: normal;
+  background: var(--cor-marrom); color: var(--cor-creme);
+  border-radius: var(--raio-pill); text-decoration: none;
+  font-size: 0.9rem; box-shadow: var(--sombra-3);
+}
+
+/* Filete decorativo dourado */
+.filete {
+  width: 56px; height: 1px; border: 0;
+  background: linear-gradient(90deg, transparent, var(--cor-dourado), transparent);
+  margin: var(--e-3) 0;
+}
+.centro .filete { margin-inline: auto; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--e-2);
+  min-height: 48px;                         /* alvo de toque confortável */
+  padding: var(--e-2) var(--e-5);
+  border-radius: var(--raio-pill);
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--t-rapida), color var(--t-rapida),
+              border-color var(--t-rapida), transform var(--t-rapida);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--primario {
+  background: var(--cor-marrom);
+  color: var(--cor-creme);
+}
+.btn--primario:hover { background: #3A281F; }
+
+.btn--dourado {
+  background: var(--cor-dourado);
+  color: #35241A;
+}
+.btn--dourado:hover { background: var(--cor-dourado-escuro); color: var(--cor-creme); }
+
+.btn--contorno {
+  background: transparent;
+  color: var(--texto);
+  border-color: var(--borda);
+}
+.btn--contorno:hover { border-color: var(--cor-dourado); background: var(--cor-bege); }
+
+.btn--bloco { width: 100%; }
+
+/* Evento esgotado: visualmente inativo, sem cursor de link. */
+.btn[aria-disabled="true"] {
+  opacity: .55; cursor: not-allowed; pointer-events: none;
+  background: var(--cor-bege); color: var(--texto-meta); border-color: var(--borda);
+}
+.btn-grupo { display: flex; flex-direction: column; gap: var(--e-3); }
+@media (min-width: 560px) {
+  .btn-grupo { flex-direction: row; flex-wrap: wrap; }
+  .btn--bloco { width: auto; }
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(251, 247, 241, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda);
+}
+.header__inner {
+  height: var(--altura-header);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--e-4);
+}
+.logo { display: flex; align-items: center; gap: var(--e-3); text-decoration: none; }
+.logo img { height: 34px; width: auto; }
+.logo__texto {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--texto); line-height: 1;
+}
+
+.nav-toggle {
+  width: 44px; height: 44px; display: grid; place-items: center;
+  background: none; border: 0; cursor: pointer; border-radius: var(--raio-sm);
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 1.5px; background: var(--texto);
+  position: relative; transition: transform var(--t-media), opacity var(--t-rapida);
+}
+.nav-toggle span::before, .nav-toggle span::after {
+  content: ""; position: absolute; left: 0; width: 22px; height: 1.5px;
+  background: var(--texto); transition: transform var(--t-media);
+}
+.nav-toggle span::before { top: -7px; }
+.nav-toggle span::after  { top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+.nav {
+  position: fixed; inset: var(--altura-header) 0 auto 0;
+  background: var(--cor-creme);
+  border-bottom: 1px solid var(--borda);
+  padding: 0 var(--gutter);
+  box-shadow: var(--sombra-2);
+  /* Abre e fecha deslizando, em vez de piscar com display:none. */
+  max-height: 0; opacity: 0; visibility: hidden; overflow: hidden;
+  transition: max-height 300ms cubic-bezier(.22,.61,.36,1),
+              opacity 200ms ease, visibility 300ms, padding 300ms;
+}
+.nav[data-aberto="true"] {
+  max-height: 80vh; opacity: 1; visibility: visible;
+  padding: var(--e-3) var(--gutter) var(--e-5);
+}
+.nav ul { list-style: none; margin: 0; padding: 0; }
+.nav li + li { border-top: 1px solid var(--borda); }
+.nav a {
+  display: block; padding: var(--e-4) 0; text-decoration: none;
+  font-size: 1.05rem; color: var(--texto-suave);
+}
+.nav a:hover, .nav a[aria-current="page"] { color: var(--cor-dourado-escuro); }
+
+@media (min-width: 900px) {
+  .nav-toggle { display: none; }
+  .nav {
+    position: static; background: none; border: 0;
+    padding: 0; box-shadow: none;
+    max-height: none; opacity: 1; visibility: visible; overflow: visible;
+    transition: none;
+  }
+  .nav ul { display: flex; gap: var(--e-5); align-items: center; white-space: nowrap; }
+  .nav li + li { border-top: 0; }
+  .nav a {
+    padding: 0; font-size: 0.9rem; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; isolation: isolate; }
+.hero__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(74,52,41,.45), rgba(74,52,41,.62));
+}
+.hero__inner {
+  min-height: 66svh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-block: var(--e-7) var(--e-6);
+  color: var(--cor-creme);
+}
+.hero__inner h1, .hero__inner p { color: var(--cor-creme); }
+.hero__inner .eyebrow { color: var(--cor-rosa-blush); }
+.hero__titulo {
+  font-size: var(--fs-display);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: var(--e-3);
+}
+.hero__sub {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  max-width: 44ch;
+  margin-bottom: var(--e-5);
+}
+.hero__tags {
+  margin-top: var(--e-5); font-size: 0.8rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--cor-bege);
+}
+@media (min-width: 768px) {
+  .hero__inner { min-height: 74svh; }
+}
+
+/* ---------- Grid de cards ---------- */
+.grid { display: grid; gap: var(--e-4); }
+@media (min-width: 640px)  { .grid--2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 640px)  { .grid--3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra-1);
+  transition: box-shadow var(--t-media), transform var(--t-media);
+  display: flex; flex-direction: column;
+}
+.card:hover { box-shadow: var(--sombra-2); transform: translateY(-2px); }
+.card__media { aspect-ratio: 4 / 3; background: var(--cor-bege); }
+.card__media img { width: 100%; height: 100%; object-fit: cover; }
+.card__corpo { padding: var(--e-4); display: flex; flex-direction: column; gap: var(--e-2); flex: 1; }
+.card__corpo h3 { margin: 0; }
+.card__corpo p { color: var(--texto-suave); font-size: 1rem; }
+.card__rodape { margin-top: auto; padding-top: var(--e-2); }
+
+/* ---------- Card de evento (agenda) ---------- */
+.evento {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra-1);
+}
+.evento__media { aspect-ratio: 16 / 10; background: var(--cor-bege); }
+.evento__media img { width: 100%; height: 100%; object-fit: cover; }
+.evento__corpo { padding: var(--e-4); }
+.evento__selo {
+  display: inline-block; margin-bottom: var(--e-3);
+  padding: 4px 12px; border-radius: var(--raio-pill);
+  background: var(--cor-rosa-blush); color: #6B3B37;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
+}
+.evento__selo--esgotado { background: var(--cor-bege-escuro); color: var(--cor-marrom-claro); }
+.evento__meta { list-style: none; margin: 0 0 var(--e-4); padding: 0; display: grid; gap: var(--e-1); }
+.evento__meta li {
+  display: flex; gap: var(--e-3); align-items: baseline;
+  font-size: 0.95rem; color: var(--texto-suave);
+  padding-bottom: var(--e-1); border-bottom: 1px dashed var(--borda);
+}
+.evento__meta dt, .evento__meta b {
+  font-weight: 500; color: var(--texto);
+  min-width: 7.5em; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.evento__preco {
+  font-family: var(--fonte-titulo); font-size: 1.6rem; font-weight: 600; color: var(--texto);
+  display: flex; align-items: baseline; gap: var(--e-2); margin-bottom: var(--e-4);
+}
+.evento__preco small { font-family: var(--fonte-corpo); font-size: 0.85rem; color: var(--texto-meta); }
+.inclui { list-style: none; margin: 0 0 var(--e-4); padding: 0; display: grid; gap: var(--e-1); }
+.inclui li { position: relative; padding-left: 1.6em; color: var(--texto-suave); }
+.inclui li::before {
+  content: ""; position: absolute; left: 0; top: 0.62em;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--cor-dourado);
+}
+
+/* ---------- Formulário ---------- */
+.form { display: grid; gap: var(--e-4); max-width: 560px; }
+.campo { display: grid; gap: var(--e-2); }
+.campo label { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--texto-meta); }
+.campo input, .campo select, .campo textarea {
+  font: inherit; color: var(--texto);
+  padding: var(--e-3) var(--e-4);
+  min-height: 50px;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-sm);
+  width: 100%;
+}
+.campo textarea { min-height: 120px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  border-color: var(--cor-dourado); outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 161, 92, .18);
+}
+.form__ajuda { font-size: 0.88rem; color: var(--texto-meta); }
+
+/* ---------- Faixa de citação ---------- */
+.faixa {
+  background: var(--cor-marrom); color: var(--cor-creme);
+  padding-block: var(--e-6); text-align: center;
+}
+.faixa p {
+  font-family: var(--fonte-titulo); font-weight: 300;
+  font-size: 1.35rem; line-height: 1.4; max-width: 32ch;
+  margin-inline: auto; color: var(--cor-creme);
+}
+
+/* ---------- WhatsApp flutuante ---------- */
+.whats-float {
+  position: fixed; right: 16px; bottom: 16px; z-index: 70;
+  display: inline-flex; align-items: center; gap: var(--e-3);
+  padding: 12px 18px 12px 14px;
+  /* Verde mais fundo que o #25D366 para o branco passar no contraste:
+     5,02:1 com o rótulo e com o ícone. */
+  background: #0B8043; color: #FFFFFF;
+  border-radius: var(--raio-pill);
+  text-decoration: none; font-weight: 500; font-size: 0.92rem;
+  box-shadow: var(--sombra-3);
+  transition: transform var(--t-rapida), background var(--t-rapida);
+}
+.whats-float:hover { background: #0A6E39; }
+
+/* Pulso discreto: um anel que nasce no botão e some. Não mexe no botão em si,
+   então nada "pula" enquanto a pessoa tenta tocar. */
+.whats-float::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(11, 128, 67, .45);
+  animation: pulso-whats 2.8s cubic-bezier(.22,.61,.36,1) infinite;
+}
+.whats-float:hover::before, .whats-float:focus-visible::before { animation-play-state: paused; }
+@keyframes pulso-whats {
+  0%   { box-shadow: 0 0 0 0 rgba(11, 128, 67, .45); }
+  60%  { box-shadow: 0 0 0 14px rgba(11, 128, 67, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(11, 128, 67, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whats-float::before { animation: none; }
+}
+.whats-float svg { width: 22px; height: 22px; flex: none; }
+.whats-float span { display: none; }
+@media (min-width: 560px) { .whats-float span { display: inline; } }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--cor-creme-2);
+  border-top: 1px solid var(--borda);
+  padding-block: var(--e-6) var(--e-5);
+}
+.footer__grid { display: grid; gap: var(--e-5); }
+@media (min-width: 760px) { .footer__grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+.footer h4 {
+  font-family: var(--fonte-corpo); font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--texto-meta);
+  margin-bottom: var(--e-3);
+}
+.footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-2); }
+.footer a { text-decoration: none; color: var(--texto-suave); }
+.footer a:hover { color: var(--cor-dourado-escuro); }
+.footer__base {
+  margin-top: var(--e-5); padding-top: var(--e-4);
+  border-top: 1px solid var(--borda);
+  font-size: 0.82rem; color: var(--texto-meta);
+  display: flex; flex-wrap: wrap; gap: var(--e-3); justify-content: space-between;
+}
+/* Links de cancelamento e privacidade na base do rodape. */
+.footer__docs { display: flex; flex-wrap: wrap; gap: var(--e-2) var(--e-4); }
+.footer__docs a { text-decoration: underline; text-underline-offset: 3px; }
+/* O respiro para o botão flutuante vai DENTRO do rodapé, senão sobra uma
+   faixa do fundo do body abaixo dele e a página parece cortada. */
+@media (max-width: 899px) {
+  .footer { padding-bottom: calc(var(--e-5) + 76px); }
+}
+
+/* ---------- Revelação suave ao rolar ----------
+   Só entra em ação quando o JS está ativo (classe .js no <html>).
+   Sem JS, o conteúdo aparece normalmente. */
+html.js .reveal {
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 380ms ease, transform 380ms cubic-bezier(.22,.61,.36,1);
+}
+html.js .reveal.is-visivel { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal { opacity: 1; transform: none; }
+}
+
+
+/* ==========================================================================
+   LAYOUT EDITORIAL — blocos que quebram o ritmo de seções centralizadas.
+   Acrescentado no polimento; depende dos tokens e dos componentes acima.
+   ========================================================================== */
+
+/* ---------- Moldura de imagem ----------
+   Enquadramento único para toda foto do site: proporcão fixa, canto suave e
+   um filete dourado por dentro, para a foto assentar na paleta da marca. */
+.moldura {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--raio);
+  background: var(--cor-bege);
+  box-shadow: inset 0 0 0 1px rgba(201, 161, 92, .35);
+}
+.moldura img { width: 100%; height: 100%; object-fit: cover; }
+.moldura--4x3  { aspect-ratio: 4 / 3; }
+.moldura--16x10 { aspect-ratio: 16 / 10; }
+.moldura--retrato { aspect-ratio: 3 / 4; }
+
+/* ---------- Bloco editorial: texto ao lado da foto ---------- */
+.editorial { display: grid; gap: var(--e-5); align-items: center; }
+.editorial__texto > :last-child { margin-bottom: 0; }
+@media (min-width: 900px) {
+  .editorial { grid-template-columns: 1fr 1fr; gap: var(--e-7); }
+  /* Inverte a ordem visual sem mexer na ordem do HTML (leitura e teclado seguem iguais). */
+  .editorial--inverso .editorial__media { order: -1; }
+}
+
+/* ---------- Experiência em destaque ----------
+   A pintura de taças é a experiência assinatura: ganha largura dobrada e a
+   lista do que está incluído, enquanto as outras ficam em cards menores. */
+.destaque {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra-2);
+  display: grid;
+}
+.destaque__corpo { padding: var(--e-5); display: flex; flex-direction: column; gap: var(--e-3); }
+.destaque__corpo h3 { font-size: var(--fs-h2); margin: 0; }
+@media (min-width: 760px) {
+  .destaque { grid-template-columns: 1.1fr 1fr; align-items: stretch; }
+  .destaque .moldura { height: 100%; aspect-ratio: auto; border-radius: 0; }
+  .destaque__corpo { padding: var(--e-6); justify-content: center; }
+}
+.destaque { grid-column: 1 / -1; }   /* linha inteira: deixa 6 cards fechando a grade */
+
+/* Selo discreto de experiência assinatura. */
+.selo-assinatura {
+  align-self: flex-start;
+  padding: 4px 12px; border-radius: var(--raio-pill);
+  background: var(--cor-rosa-blush); color: #6B3B37;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
+}
+
+/* ---------- Evento em destaque na home ---------- */
+.evento--destaque { display: grid; }
+.evento--destaque .moldura { border-radius: 0; }
+@media (min-width: 860px) {
+  .evento--destaque { grid-template-columns: 1fr 1fr; }
+  .evento--destaque .moldura { height: 100%; aspect-ratio: auto; }
+  .evento--destaque .evento__corpo { padding: var(--e-6); align-self: center; }
+}
+
+/* ---------- Cabeçalho de seção alinhado à esquerda ----------
+   Alternativa ao .centro, para as seções não terem todas o mesmo eixo. */
+.secao__topo { max-width: 56ch; margin-bottom: var(--e-5); }
+.secao__topo > :last-child { margin-bottom: 0; }
+
+/* ---------- Faixa de citação sobre foto ---------- */
+.faixa--foto { position: relative; isolation: isolate; overflow: hidden; }
+.faixa--foto img {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.faixa--foto::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: rgba(74, 52, 41, .78);
+}
+
+/* ---------- Movimento ----------
+   Um único gesto: a foto do card respira devagar quando o cursor entra.
+   Sem deslocamento do card, que embaralha a leitura em grade. */
+.card { transition: box-shadow var(--t-media); }
+.card:hover { transform: none; box-shadow: var(--sombra-2); }
+.card .moldura img, .destaque .moldura img { transition: transform 700ms cubic-bezier(.22,.61,.36,1); }
+.card:hover .moldura img, .destaque:hover .moldura img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .moldura img, .destaque:hover .moldura img { transform: none; }
+}
+
+/* ---------- Véu do hero ----------
+   Mais claro no alto (onde aparecem os rostos) e fechando embaixo, onde o
+   texto creme precisa de contraste. */
+.hero__media::after {
+  background:
+    linear-gradient(180deg, rgba(74,52,41,.30) 0%, rgba(74,52,41,.48) 45%, rgba(58,40,31,.80) 100%);
+}
+
+
+
+/* ==========================================================================
+   DENSIDADE E INTERAÇÃO — ajustes de compactação e de resposta ao uso.
+   ========================================================================== */
+
+/* ---------- Âncoras não ficam escondidas sob o cabeçalho fixo ----------
+   Sem isto, "Ver a próxima data" rola até a agenda e o cabeçalho cobre o título. */
+main [id], section[id] { scroll-margin-top: calc(var(--altura-header) + 16px); }
+
+/* ---------- O cabeçalho reage ao rolar ----------
+   Ganha sombra e encolhe um pouco: mostra que a página saiu do topo. */
+.header {
+  transition: box-shadow var(--t-media), background-color var(--t-media);
+}
+.header[data-rolado="true"] {
+  box-shadow: 0 2px 16px rgba(74, 52, 41, .10);
+  background: rgba(251, 247, 241, .97);
+}
+.header__inner { transition: height var(--t-media); }
+.header[data-rolado="true"] .header__inner { height: calc(var(--altura-header) - 8px); }
+.logo img { transition: height var(--t-media); }
+.header[data-rolado="true"] .logo img { height: 28px; }
+
+/* ---------- Cards compactos no celular ----------
+   Abaixo de 640px os cards secundários ficam deitados: a foto à esquerda,
+   o texto à direita. Corta quase pela metade a altura da lista. */
+@media (max-width: 639px) {
+  .card { flex-direction: row; align-items: stretch; }
+  /* .card__media e a marcacao antiga das paginas internas; .moldura e a nova. */
+  .card > .moldura,
+  .card > .card__media {
+    flex: 0 0 38%; aspect-ratio: auto; border-radius: 0; overflow: hidden;
+    box-shadow: inset -1px 0 0 rgba(201, 161, 92, .35);
+  }
+  .card > .card__media img { width: 100%; height: 100%; object-fit: cover; }
+  .card__corpo { padding: var(--e-4); gap: var(--e-2); }
+  .card__corpo h3 { font-size: 1.15rem; }
+  .card__corpo p { font-size: 0.92rem; }
+  .card__rodape { padding-top: var(--e-1); }
+  .card__rodape .btn {
+    /* 44px e o piso de alvo de toque; nao descer daqui para ganhar altura. */
+    min-height: 44px; font-size: 0.74rem; width: auto;
+    padding-inline: var(--e-4); letter-spacing: 0.04em;
+  }
+  /* O destaque continua em pé: é a experiência assinatura. */
+  .destaque { grid-template-columns: 1fr; }
+  .destaque > .moldura { aspect-ratio: 16 / 10; }
+}
+
+/* ---------- Entrada escalonada dentro das grades ----------
+   Os itens de uma mesma linha entram em sequência curta, não todos de uma vez. */
+html.js .grid > .reveal:nth-child(2) { transition-delay: 70ms; }
+html.js .grid > .reveal:nth-child(3) { transition-delay: 140ms; }
+html.js .grid > .reveal:nth-child(4) { transition-delay: 70ms; }
+html.js .grid > .reveal:nth-child(5) { transition-delay: 140ms; }
+html.js .grid > .reveal:nth-child(6) { transition-delay: 210ms; }
+
+/* ---------- Resposta ao toque e ao teclado ---------- */
+.btn:active { transform: translateY(1px) scale(.995); }
+.card__rodape .btn:hover { border-color: var(--cor-dourado); }
+.nav a { transition: color var(--t-rapida); }
+
+/* ---------- Botão flutuante menos intrusivo ----------
+   Encolhe depois que a pessoa começa a ler, para não tapar conteúdo. */
+.whats-float { transition: transform var(--t-rapida), box-shadow var(--t-media); }
+.whats-float:hover { transform: translateY(-2px); box-shadow: var(--sombra-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .grid > .reveal { transition-delay: 0ms !important; }
+  .header__inner, .logo img { transition: none; }
+}
+
+
+/* ==========================================================================
+   LEITURA DOS CARDS — hierarquia, área de toque e resposta.
+   ========================================================================== */
+
+/* ---------- Hero centrado no celular ----------
+   Em tela estreita a coluna é curta: centrado o texto respira melhor e os
+   botões ficam no eixo do polegar. No desktop segue alinhado à esquerda. */
+@media (max-width: 639px) {
+  .hero__inner { align-items: center; text-align: center; }
+  .hero__sub { margin-inline: auto; }
+  .hero__inner .btn-grupo { width: 100%; }
+  .hero__titulo { margin-bottom: var(--e-2); }
+}
+
+/* ---------- Título do card com o filete da marca ----------
+   O mesmo separador dourado das seções, em escala menor: amarra o card à
+   identidade e separa título de texto sem precisar de mais espaço. */
+.card__corpo h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--e-1);
+  text-wrap: balance;
+}
+.card__corpo h3::after {
+  content: ""; display: block;
+  width: 34px; height: 1px; margin-top: var(--e-2);
+  background: linear-gradient(90deg, var(--cor-dourado), transparent);
+  transition: width var(--t-media);
+}
+.card:hover .card__corpo h3::after { width: 56px; }
+
+/* Texto do card: um pouco mais solto que o corpo geral, porque é bloco curto
+   dentro de caixa estreita — é onde a leitura trava. */
+.card__corpo p {
+  line-height: 1.6;
+  color: var(--texto-suave);
+  text-wrap: pretty;
+}
+
+/* ---------- O card inteiro é clicável ----------
+   O botão continua visível como sinal da ação, mas o toque vale em qualquer
+   ponto do card — alvo muito maior no celular. */
+.card { position: relative; }
+.card__rodape .btn::after {
+  content: ""; position: absolute; inset: 0;
+  border-radius: var(--raio);
+}
+/* Com o card todo clicável, o foco de teclado precisa aparecer no card. */
+.card:focus-within {
+  outline: 2px solid var(--cor-dourado-escuro);
+  outline-offset: 3px;
+}
+.card__rodape .btn:focus-visible { outline: none; }
+
+/* ---------- Resposta ao passar e ao tocar ---------- */
+.card {
+  border-color: var(--borda);
+  transition: box-shadow var(--t-media), border-color var(--t-media);
+}
+.card:hover { border-color: var(--cor-dourado); box-shadow: var(--sombra-2); }
+.card:active { box-shadow: var(--sombra-1); }
+
+/* ---------- Títulos longos não deixam palavra órfã ---------- */
+.secao__topo h1, .secao__topo h2, .destaque__corpo h3, .hero__sub {
+  text-wrap: balance;
+}
+.lead, .destaque__corpo p { text-wrap: pretty; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card__corpo h3::after { transition: none; }
+}
+
+
+/* ==========================================================================
+   CATÁLOGO — layout da página de experiências: trilho de categorias,
+   grade no meio e a próxima data sempre à vista.
+   ========================================================================== */
+
+/* [hidden] precisa vencer o display:flex do card, senão o filtro não esconde. */
+[hidden] { display: none !important; }
+
+/* ---------- Abertura curta com foto ---------- */
+.cat-abertura { position: relative; isolation: isolate; overflow: hidden; }
+.cat-abertura img {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.cat-abertura::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(100deg, rgba(58,40,31,.90) 0%, rgba(58,40,31,.66) 100%);
+}
+.cat-abertura__inner { padding-block: var(--e-6) var(--e-7); color: var(--cor-creme); }
+.cat-abertura__inner h1 { color: var(--cor-creme); margin-bottom: var(--e-2); }
+.cat-abertura__inner .eyebrow { color: var(--cor-rosa-blush); }
+.cat-abertura__sub {
+  color: var(--cor-bege); font-size: var(--fs-lead); max-width: 52ch; margin: 0;
+}
+
+/* ---------- As três colunas ----------
+   O meio cresce bem mais que as laterais, e as laterais quebram para baixo
+   antes de a grade ficar estreita demais para dois cards. */
+.catalogo { display: flex; flex-wrap: wrap; gap: var(--e-5); align-items: flex-start; }
+.catalogo__trilho { flex: 1 1 190px; min-width: 0; }
+.catalogo__grade  { flex: 999 1 440px; min-width: 0; }
+.catalogo__agenda { flex: 1 1 250px; min-width: 0; }
+
+.catalogo__rotulo {
+  font-family: var(--fonte-corpo);
+  font-size: 0.74rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--texto-meta);
+  margin: 0 0 var(--e-3);
+}
+
+/* ---------- Filtros ---------- */
+.filtros { list-style: none; margin: 0 0 var(--e-5); padding: 0; display: grid; gap: 2px; }
+.filtro {
+  width: 100%; text-align: left;
+  min-height: 44px; padding: 0 var(--e-3);
+  border: 0; border-radius: var(--raio-sm);
+  background: transparent; color: var(--texto-suave);
+  font-family: inherit; font-size: 0.95rem; cursor: pointer;
+  transition: background var(--t-rapida), color var(--t-rapida);
+}
+.filtro:hover { background: var(--cor-bege); color: var(--texto); }
+.filtro[aria-pressed="true"] {
+  background: var(--cor-bege); color: var(--texto); font-weight: 500;
+  box-shadow: inset 2px 0 0 var(--cor-dourado);
+}
+
+.catalogo__ajuda {
+  border-top: 1px solid var(--borda); padding-top: var(--e-4);
+}
+.catalogo__ajuda p { font-size: 0.95rem; color: var(--texto-suave); margin-bottom: var(--e-3); }
+
+/* ---------- Grade ---------- */
+.catalogo__contagem {
+  margin: 0 0 var(--e-3);
+  font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--texto-meta);
+}
+/* auto-fill responde à largura real da coluna, sem precisar de breakpoint. */
+.catalogo__itens {
+  display: grid; gap: var(--e-4);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.catalogo__vazio {
+  margin-top: var(--e-5); padding: var(--e-5);
+  border: 1px dashed var(--borda); border-radius: var(--raio);
+  color: var(--texto-suave); text-align: center;
+}
+
+/* Selo de estado do card: diz se dá para reservar agora ou se é sob consulta. */
+.card__selo {
+  margin: 0; font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--texto-meta);
+}
+.card__selo--data { color: var(--cor-dourado-escuro); }
+.card__preco {
+  margin: var(--e-1) 0 0;
+  font-family: var(--fonte-titulo); font-size: 1.25rem; font-weight: 600; color: var(--texto);
+}
+.card__preco small { font-family: var(--fonte-corpo); font-size: 0.78rem; color: var(--texto-meta); }
+
+/* ---------- Ficha da próxima data ---------- */
+.ficha {
+  background: var(--fundo-alt);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--e-4);
+}
+.ficha__titulo {
+  font-size: var(--fs-h3); margin: 0 0 var(--e-3);
+}
+.ficha__meta {
+  list-style: none; margin: 0 0 var(--e-3); padding: 0;
+  display: grid; gap: var(--e-1);
+  font-size: 0.95rem; color: var(--texto-suave);
+}
+.ficha__preco {
+  font-family: var(--fonte-titulo); font-size: 1.5rem; font-weight: 600;
+  margin: 0 0 var(--e-3);
+}
+.ficha__preco small { font-family: var(--fonte-corpo); font-size: 0.8rem; color: var(--texto-meta); }
+.ficha .form__ajuda { margin-top: var(--e-3); }
+/* A coluna da ficha e estreita: o rotulo do botao precisa caber em uma linha
+   tanto como "Reservar minha vaga" quanto como "Reservar pelo WhatsApp". */
+.ficha .btn { font-size: 0.82rem; letter-spacing: 0.04em; padding-inline: var(--e-3); }
+.ficha--vip {
+  margin-top: var(--e-3); background: transparent; border-style: dashed;
+  text-align: center;
+}
+.ficha--vip p { margin: 0 0 var(--e-3); font-size: 0.95rem; color: var(--texto-suave); }
+
+/* ---------- Celular: as categorias viram uma tira que rola ----------
+   Cinco botões empilhados antes do conteúdo empurrariam a grade para fora
+   da primeira tela. */
+@media (max-width: 767px) {
+  .filtros {
+    display: flex; gap: var(--e-2);
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) var(--e-2);
+    scrollbar-width: none;
+  }
+  .filtros::-webkit-scrollbar { display: none; }
+  .filtros li { flex: none; }
+  .filtro {
+    white-space: nowrap; width: auto;
+    border: 1px solid var(--borda); border-radius: var(--raio-pill);
+    padding-inline: var(--e-4);
+  }
+  .filtro[aria-pressed="true"] {
+    box-shadow: none; border-color: var(--cor-dourado);
+    background: var(--cor-bege);
+  }
+  .catalogo__trilho { order: 1; }
+  .catalogo__grade  { order: 2; }
+  .catalogo__agenda { order: 3; }
+  .catalogo__ajuda { display: none; }   /* já existe o botão flutuante do WhatsApp */
+}
+
+/* No celular o card do catálogo segue deitado, como no resto do site. */
+@media (max-width: 639px) {
+  .card__preco { font-size: 1.2rem; }
+}

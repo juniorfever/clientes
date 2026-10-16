@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120" role="img" aria-label="Logo Entre Nós — substituir pelo arquivo original">
+  <rect width="420" height="120" fill="none"/>
+  <g opacity="0.9" transform="translate(44,60)"><ellipse cx="0" cy="-16.5" rx="9.0" ry="16.5" fill="#E5C1BE" transform="rotate(0.0)"/><ellipse cx="0" cy="-16.5" rx="9.0" ry="16.5" fill="#E5C1BE" transform="rotate(60.0)"/><ellipse cx="0" cy="-16.5" rx="9.0" ry="16.5" fill="#E5C1BE" transform="rotate(120.0)"/><ellipse cx="0" cy="-16.5" rx="9.0" ry="16.5" fill="#E5C1BE" transform="rotate(180.0)"/><ellipse cx="0" cy="-16.5" rx="9.0" ry="16.5" fill="#E5C1BE" transform="rotate(240.0)"/><ellipse cx="0" cy="-16.5" rx="9.0" ry="16.5" fill="#E5C1BE" transform="rotate(300.0)"/><circle r="6.0" fill="#C9A15C"/></g>
+  <text x="92" y="58" font-family="Georgia, serif" font-size="34" fill="#4A3429" letter-spacing="7">ENTRE NÓS</text>
+  <line x1="92" y1="72" x2="392" y2="72" stroke="#C9A15C" stroke-width="1"/>
+  <text x="92" y="95" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#8A6B57" letter-spacing="4.5">EXPERIÊNCIAS QUE APROXIMAM</text>
+</svg>
