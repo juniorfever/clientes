@@ -620,10 +620,10 @@ html.js .grid > .reveal:nth-child(6) { transition-delay: 210ms; }
      embaixo (onde ficam o selo/título e as tags) e alivia no meio. */
   .hero__media::after {
     background: linear-gradient(180deg,
-      rgba(58,40,31,.72) 0%,
-      rgba(58,40,31,.30) 28%,
-      rgba(58,40,31,.38) 60%,
-      rgba(58,40,31,.80) 100%);
+      rgba(35,22,16,.88) 0%,
+      rgba(35,22,16,.40) 24%,
+      rgba(35,22,16,.48) 58%,
+      rgba(20,12,8,.94) 100%);
   }
 }
 
