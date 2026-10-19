@@ -152,11 +152,20 @@ a.sr-only:focus {
   display: flex; align-items: center; justify-content: space-between; gap: var(--e-4);
 }
 .logo { display: flex; align-items: center; gap: var(--e-3); text-decoration: none; }
-.logo img { height: 52px; width: auto; }
+.logo img { height: 42px; width: auto; }
+.logo__marca { display: block; }
 .logo__texto {
+  display: block;
   font-family: var(--fonte-titulo);
-  font-size: 1rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 1.05rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--texto); line-height: 1;
+}
+.logo__tagline {
+  display: block;
+  margin-top: 5px; padding-top: 5px;
+  border-top: 1px solid var(--cor-dourado);
+  font-size: 0.5rem; font-weight: 400; letter-spacing: 0.17em; text-transform: uppercase;
+  color: var(--texto-meta); line-height: 1; white-space: nowrap;
 }
 
 .nav-toggle {
@@ -551,7 +560,7 @@ main [id], section[id] { scroll-margin-top: calc(var(--altura-header) + 16px); }
 .header__inner { transition: height var(--t-media); }
 .header[data-rolado="true"] .header__inner { height: calc(var(--altura-header) - 8px); }
 .logo img { transition: height var(--t-media); }
-.header[data-rolado="true"] .logo img { height: 42px; }
+.header[data-rolado="true"] .logo img { height: 34px; }
 
 /* ---------- Cards compactos no celular ----------
    Abaixo de 640px os cards secundários ficam deitados: a foto à esquerda,
@@ -561,7 +570,7 @@ main [id], section[id] { scroll-margin-top: calc(var(--altura-header) + 16px); }
   /* .card__media e a marcacao antiga das paginas internas; .moldura e a nova. */
   .card > .moldura,
   .card > .card__media {
-    flex: 0 0 38%; aspect-ratio: auto; border-radius: 0; overflow: hidden;
+    flex: 0 0 45%; aspect-ratio: auto; border-radius: 0; overflow: hidden;
     box-shadow: inset -1px 0 0 rgba(201, 161, 92, .35);
   }
   .card > .card__media img { width: 100%; height: 100%; object-fit: cover; }
