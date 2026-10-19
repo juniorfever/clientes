@@ -6,8 +6,7 @@
 
 window.ENTRE_NOS = {
   // WhatsApp comercial em formato internacional, só números: 55 + DDD + número
-  // >>> PENDENTE: 5551999999999 é um número FICTÍCIO. Troque antes de publicar. <<<
-  whatsapp: "5551999999999",
+  whatsapp: "5551980382749",
 
   // Mensagens pré-preenchidas por contexto
   mensagens: {
@@ -20,6 +19,9 @@ window.ENTRE_NOS = {
 
   // Perfil do Instagram (sem @) — oficial, confirmado
   instagram: "entre_nosofficial",
+
+  // Instagram pessoal da criadora (sem @). Aparece discreto na base do rodapé.
+  instagramCriadora: "saionaraalano",
 
   // Link real de compra do primeiro evento (Sympla). Deixe "" enquanto não existir:
   // o site troca o botão por WhatsApp automaticamente.

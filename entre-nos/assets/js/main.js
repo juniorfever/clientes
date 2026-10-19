@@ -70,6 +70,18 @@
     }
   });
 
+  /* Instagram da criadora */
+  document.querySelectorAll("[data-instagram-criadora]").forEach(function (el) {
+    if (CFG.instagramCriadora) {
+      el.setAttribute("href", "https://instagram.com/" + CFG.instagramCriadora);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+      el.textContent = "@" + CFG.instagramCriadora;
+    } else {
+      el.closest("[data-criadora-wrap]").setAttribute("hidden", "");
+    }
+  });
+
   /* E-mail */
   document.querySelectorAll("[data-email]").forEach(function (el) {
     if (CFG.email) {

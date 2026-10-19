@@ -418,6 +418,10 @@ a.sr-only:focus {
 /* Links de cancelamento e privacidade na base do rodape. */
 .footer__docs { display: flex; flex-wrap: wrap; gap: var(--e-2) var(--e-4); }
 .footer__docs a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Credito da criadora: presente, mas sem competir com o perfil da marca. */
+.footer__criadora { font-size: 0.76rem; opacity: 0.75; }
+.footer__criadora a { text-decoration: underline; text-underline-offset: 3px; }
 /* O respiro para o botão flutuante vai DENTRO do rodapé, senão sobra uma
    faixa do fundo do body abaixo dele e a página parece cortada. */
 @media (max-width: 899px) {
