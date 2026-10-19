@@ -152,7 +152,7 @@ a.sr-only:focus {
   display: flex; align-items: center; justify-content: space-between; gap: var(--e-4);
 }
 .logo { display: flex; align-items: center; gap: var(--e-3); text-decoration: none; }
-.logo img { height: 34px; width: auto; }
+.logo img { height: 52px; width: auto; }
 .logo__texto {
   font-family: var(--fonte-titulo);
   font-size: 1rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
@@ -551,7 +551,7 @@ main [id], section[id] { scroll-margin-top: calc(var(--altura-header) + 16px); }
 .header__inner { transition: height var(--t-media); }
 .header[data-rolado="true"] .header__inner { height: calc(var(--altura-header) - 8px); }
 .logo img { transition: height var(--t-media); }
-.header[data-rolado="true"] .logo img { height: 28px; }
+.header[data-rolado="true"] .logo img { height: 42px; }
 
 /* ---------- Cards compactos no celular ----------
    Abaixo de 640px os cards secundários ficam deitados: a foto à esquerda,
