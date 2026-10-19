@@ -615,6 +615,16 @@ html.js .grid > .reveal:nth-child(6) { transition-delay: 210ms; }
   .hero__sub { margin-inline: auto; }
   .hero__inner .btn-grupo { width: 100%; }
   .hero__titulo { margin-bottom: var(--e-2); }
+
+  /* Texto ocupa quase toda a altura da foto no celular: escurece em cima e
+     embaixo (onde ficam o selo/título e as tags) e alivia no meio. */
+  .hero__media::after {
+    background: linear-gradient(180deg,
+      rgba(58,40,31,.72) 0%,
+      rgba(58,40,31,.30) 28%,
+      rgba(58,40,31,.38) 60%,
+      rgba(58,40,31,.80) 100%);
+  }
 }
 
 /* ---------- Título do card com o filete da marca ----------
