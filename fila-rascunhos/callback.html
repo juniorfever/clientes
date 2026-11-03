@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autorização concluída — fila-rascunhos</title>
+<style>
+  body{max-width:640px;margin:0 auto;padding:60px 20px;
+       font:16px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif;color:#1f2937}
+  h1{font-size:24px;margin:0 0 8px}
+  p{color:#4b5563}
+  .cod{margin-top:24px;background:#0e1116;color:#e9edf2;border-radius:10px;
+       padding:16px;font:13px/1.5 ui-monospace,Consolas,monospace;
+       word-break:break-all;user-select:all}
+  button{margin-top:14px;background:#2f6df6;color:#fff;border:none;
+         border-radius:8px;padding:11px 18px;font-size:15px;font-weight:600;
+         cursor:pointer}
+  button:hover{background:#265fdd}
+  .erro{background:#fee2e2;color:#991b1b;padding:14px 16px;border-radius:8px}
+  .ok{color:#15803d;font-weight:600;margin-top:12px;min-height:22px}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid #e5e7eb;
+         color:#6b7280;font-size:13px}
+</style>
+</head>
+<body>
+  <h1>Autorização concluída</h1>
+  <p id="msg">Copie o código abaixo e cole na ferramenta para concluir a conexão.</p>
+
+  <div id="area">
+    <div class="cod" id="cod">lendo…</div>
+    <button id="btn">Copiar código</button>
+    <div class="ok" id="ok"></div>
+  </div>
+
+  <footer>Esta página apenas exibe o código devolvido pelo TikTok. Nada é
+  enviado ou armazenado por ela.</footer>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  const code = q.get('code');
+  const erro = q.get('error') || q.get('error_description');
+
+  if (code) {
+    document.getElementById('cod').textContent = code;
+  } else {
+    // textContent, nunca innerHTML: `erro` vem da query string e com innerHTML
+    // vira XSS refletido (ex.: ?error=<img src=x onerror=...>).
+    const box = document.createElement('div');
+    box.className = 'erro';
+    box.textContent = 'Nenhum código recebido.'
+      + (erro ? ' Retorno do TikTok: ' + erro : '');
+    const area = document.getElementById('area');
+    area.textContent = '';
+    area.appendChild(box);
+    document.getElementById('msg').textContent =
+      'A autorização não foi concluída. Tente novamente pela ferramenta.';
+  }
+
+  const btn = document.getElementById('btn');
+  if (btn) btn.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      document.getElementById('ok').textContent = 'Copiado.';
+    } catch {
+      document.getElementById('ok').textContent =
+        'Não foi possível copiar sozinho. Selecione o texto e copie na mão.';
+    }
+  };
+</script>
+</body>
+</html>
