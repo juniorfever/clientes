@@ -396,8 +396,8 @@ body[data-lb="true"]{overflow:hidden}
 /* linha de contato com ícone */
 .linha-ic{display:flex;align-items:center;gap:.75rem}
 .linha-ic a{text-decoration:none}
-.linha-ic .ic{color:var(--brass);opacity:.9;transition:opacity .3s,transform .4s cubic-bezier(.22,.61,.36,1)}
-.linha-ic:hover .ic{opacity:1;transform:translateX(1px)}
+.linha-ic .ic,.linha-ic .ic-zap{color:var(--brass);opacity:.9;transition:opacity .3s,transform .4s cubic-bezier(.22,.61,.36,1)}
+.linha-ic:hover .ic,.linha-ic:hover .ic-zap{opacity:1;transform:translateX(1px)}
 
 /* redes: só o ícone, com área de toque confortável */
 .redes{display:flex;gap:.25rem;align-items:center}
@@ -415,14 +415,14 @@ body[data-lb="true"]{overflow:hidden}
 .dados{gap:1.25rem}
 .dados .dado{display:grid;gap:.35rem}
 .dados .dado-linha{display:flex;align-items:baseline;gap:.85rem}
-.dados .dado-linha .ic{color:var(--brass);align-self:center}
+.dados .dado-linha .ic,.dados .dado-linha .ic-zap{color:var(--brass);align-self:center}
 .dados b{font-family:var(--serif);font-size:1.25rem;font-weight:400;margin:0}
 .dados a{text-decoration:none;border-bottom:1px solid var(--hairline);padding-bottom:.15rem}
 .dados a:hover{border-bottom-color:var(--brass)}
 
 /* rodapé: contato em linha com ícone */
 .foot__contato{display:grid;gap:.9rem;margin-top:1rem}
-.foot__contato .linha-ic .ic{color:var(--brass-light)}
+.foot__contato .linha-ic .ic,.foot__contato .linha-ic .ic-zap{color:var(--brass-light)}
 
 /* ============================================================
    Botão flutuante de WhatsApp.
@@ -462,3 +462,20 @@ body[data-lb="true"] .zap{display:none}
   .zap{transition:none}
   .zap:hover,.zap:focus-visible{transform:none}
 }
+
+/* Marca é marca: glifo oficial, preenchido.
+   Só os ícones de função ficam em traço desenhado. */
+.ic--marca{fill:currentColor;stroke:none}
+.zap .ic--marca{width:1.6rem;height:1.6rem}
+
+/* WhatsApp: ícone fornecido pelo cliente, aplicado como máscara para
+   herdar a cor do contexto. O arquivo é branco puro; como máscara ele
+   fica latão no claro e osso no escuro, sem precisar de duas versões. */
+.ic-zap{
+  display:inline-block;width:1.125rem;height:1.125rem;flex:0 0 auto;
+  background-color:currentColor;
+  -webkit-mask:url("../img/whatsapp.png") center/contain no-repeat;
+  mask:url("../img/whatsapp.png") center/contain no-repeat;
+}
+.zap .ic-zap{width:1.75rem;height:1.75rem;position:relative;z-index:1}
+.redes .ic-zap{width:1.375rem;height:1.375rem}
