@@ -1,0 +1,5 @@
+# capturas de verificacao e backups locais, nao vao para o repositorio
+shots/
+*.bak.html
+.bak-*.html
+index-v1-cru.html

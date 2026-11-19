@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vexil Studio — portfólio</title>
+<meta name="description" content="Vexil Studio: sites, identidade, tráfego pago e vídeo na mesma mão. Seis negócios no ar, todos clicáveis.">
+<meta name="theme-color" content="#F4F1EA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap">
+<style>
+/* ==========================================================================
+   Vexil Studio — portfólio
+   Estrutura, escala tipográfica e ritmo seguem o layout de referência:
+   grotesca leve enorme com entreletra negativa, grade assimétrica com vazio
+   deliberado, colunas separadas por filete, cartões grandes de canto redondo,
+   escada numerada e marquise de clientes.
+   Da Vexil ficam o logo (Cinzel) e as cores.
+   ========================================================================== */
+
+:root {
+  --ground:    #F4F1EA;   /* marfim */
+  --ground-2:  #EDE9E0;
+  --areia:     #DCD5C6;
+  --ink:       #15171A;   /* tinta */
+  --ink-2:     #55574F;
+  --fade:      #9A978D;   /* o cinza das palavras apagadas do título */
+  --bronze:    #8A6236;   /* sobre marfim */
+  --bronze-cl: #B4895B;   /* sobre tinta */
+  --inv:       #F4F1EA;
+  --inv-2:     #B9BCBE;
+  --rule:      rgba(21, 23, 26, 0.16);
+  --rule-inv:  rgba(244, 241, 234, 0.24);
+
+  --wrap:   1300px;
+  --gutter: clamp(20px, 5vw, 76px);
+  --gap:    clamp(24px, 2.6vw, 38px);
+
+  --d1: clamp(40px, 7.4vw, 104px);   /* título da abertura */
+  --d2: clamp(32px, 5.2vw, 74px);    /* títulos de seção */
+  --d3: clamp(22px, 2.3vw, 32px);    /* nomes de projeto */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { list-style: none; padding: 0; }
+
+a { color: inherit; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+
+:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+
+.pular {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+  background: var(--ink); color: var(--ground); padding: 12px 18px; z-index: 90;
+}
+.pular:focus { width: auto; height: auto; clip-path: none; left: 10px; top: 10px; }
+
+/* ---------- tipografia da referência ---------- */
+
+.display {
+  font-weight: 300;
+  font-size: var(--d1);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+.titulo {
+  font-weight: 300;
+  font-size: var(--d2);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.apagado { color: var(--fade); }
+.italico { font-style: italic; }
+
+.etiqueta {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.corpo { font-size: 17px; line-height: 1.55; color: var(--ink); }
+.corpo--fraco { color: var(--ink-2); }
+
+/* ---------- botões ---------- */
+
+.pilula {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.pilula__texto {
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 15px 28px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  /* dentro de um título a entreletra é negativa: a pílula volta ao normal */
+  letter-spacing: normal;
+  white-space: nowrap;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.pilula__seta {
+  width: 46px; height: 46px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  transition: background-color 180ms ease, color 180ms ease, transform 220ms ease;
+}
+
+.pilula:hover .pilula__texto,
+.pilula:hover .pilula__seta { background: var(--ink); color: var(--ground); }
+.pilula:hover .pilula__seta { transform: rotate(45deg); }
+
+.pilula--inv .pilula__texto,
+.pilula--inv .pilula__seta { border-color: var(--inv); color: var(--inv); }
+.pilula--inv:hover .pilula__texto,
+.pilula--inv:hover .pilula__seta { background: var(--inv); color: var(--ink); }
+
+/* link sublinhado da referência */
+.sub {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  padding-bottom: 3px;
+  transition: color 160ms ease, background-size 220ms ease;
+}
+.sub:hover { color: var(--bronze); }
+
+/* ==========================================================================
+   CABEÇALHO — logo, linha de aposto, menu em lista
+   ========================================================================== */
+
+.topo { padding: clamp(22px, 3vw, 34px) 0 clamp(26px, 4vw, 48px); }
+
+.topo__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.logo { display: inline-flex; flex-direction: column; gap: 5px; text-decoration: none; }
+
+.logo__palavra {
+  font-family: Cinzel, Georgia, serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  margin-right: -0.22em;
+}
+
+.logo__linha { display: flex; align-items: center; gap: 9px; }
+.logo__risco { width: 20px; height: 1px; background: var(--bronze); }
+
+.logo__sub {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  color: var(--bronze);
+  margin-right: -0.4em;
+}
+
+.topo__aposto { font-size: 16px; line-height: 1.3; max-width: 22ch; }
+
+.topo__menu { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+/* o menu do topo descansa sem risco: a linha é desenhada no hover */
+.topo__menu a {
+  font-size: 16px;
+  text-decoration: none;
+  background-size: 0 1px;
+  transition: color 160ms ease, background-size 220ms ease;
+}
+.topo__menu a:hover { color: var(--bronze); background-size: 100% 1px; }
+
+@media (max-width: 859px) {
+  .topo__grade { grid-template-columns: 1fr auto; }
+  .topo__aposto { display: none; }
+  .topo__menu { flex-direction: row; flex-wrap: wrap; gap: 14px 20px; align-items: center; }
+}
+
+/* ==========================================================================
+   ABERTURA
+   ========================================================================== */
+
+.abertura { padding-bottom: clamp(44px, 7vw, 92px); }
+
+.abertura__titulo { max-width: 15ch; }
+
+/* a última palavra apagada, com régua embaixo, como no layout de referência */
+.regua {
+  display: inline-block;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 0.06em;
+}
+
+.abertura__base {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: var(--gap);
+  align-items: start;
+  margin-top: clamp(48px, 9vw, 128px);
+}
+
+.abertura__frase { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.3; }
+
+.abertura__rodape {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.15fr);
+  gap: var(--gap);
+  align-items: end;
+  margin-top: clamp(36px, 5vw, 64px);
+}
+
+.clientes-linha { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; }
+
+@media (max-width: 1023px) {
+  .abertura__base { grid-template-columns: 1fr; gap: 26px; margin-top: 44px; }
+  .abertura__rodape { grid-template-columns: 1fr; align-items: start; gap: 28px; }
+}
+
+/* imagem de sangria logo abaixo da abertura */
+.sangria { width: 100%; }
+.sangria img { width: 100%; height: clamp(240px, 46vw, 560px); object-fit: cover; }
+
+/* ==========================================================================
+   SERVIÇOS — quatro colunas separadas por filete
+   ========================================================================== */
+
+.secao { padding: clamp(64px, 9vw, 140px) 0; }
+
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+}
+
+.servico {
+  padding: 28px 30px 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 1px solid var(--rule);
+  padding-left: 30px;
+}
+.servico:first-child { border-left: 0; padding-left: 0; }
+
+.servico__n {
+  width: 54px; height: 54px;
+  border-radius: 14px;
+  background: var(--areia);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bronze);
+}
+
+.servico__nome { font-size: 23px; font-weight: 400; line-height: 1.12; letter-spacing: -0.025em; }
+.servico p { font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+.servico .sub { font-size: 16px; align-self: flex-start; margin-top: 4px; }
+
+@media (max-width: 1023px) { .servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); } .servico:nth-child(3) { border-left: 0; padding-left: 0; } }
+@media (max-width: 599px)  { .servicos { grid-template-columns: 1fr; } .servico { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); } .servico:first-child { border-top: 0; } }
+
+/* ==========================================================================
+   TÍTULO EM ESCADA, com a pílula no fim da última linha
+   ========================================================================== */
+
+.escada { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.escada__l2 { margin-left: clamp(10px, 2.4vw, 34px); }
+.escada__l3 { margin-left: clamp(20px, 4.8vw, 68px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 28px); }
+.escada .pilula__texto { font-size: 15px; padding: 12px 22px; }
+.escada .pilula__seta { width: 40px; height: 40px; }
+
+/* ==========================================================================
+   PORTFÓLIO — cartões grandes de canto redondo, duas colunas
+   ========================================================================== */
+
+.obras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 3.4vw, 54px) var(--gap);
+  margin-top: clamp(40px, 6vw, 76px);
+}
+
+.obra { display: flex; flex-direction: column; gap: 16px; }
+
+.obra__moldura {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--ground-2);
+  text-decoration: none;
+}
+
+.obra__moldura img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 700ms cubic-bezier(.16, 1, .3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .obra__moldura:hover img { transform: scale(1.035); }
+  .obra:hover .obra__nome { color: var(--bronze); }
+}
+
+.obra__nome {
+  font-size: var(--d3);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  transition: color 180ms ease;
+}
+
+.obra__meta { font-size: 15px; color: var(--ink-2); }
+
+@media (max-width: 759px) { .obras { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   MÉTODO — coluna fixa com numeral gigante e escada de quatro linhas
+   ========================================================================== */
+
+.metodo { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); gap: var(--gap); }
+
+.metodo__lado { position: sticky; top: 40px; align-self: start; display: flex; flex-direction: column; gap: clamp(26px, 4vw, 52px); }
+
+.metodo__numeral {
+  font-size: clamp(90px, 13vw, 190px);
+  font-weight: 300;
+  line-height: 0.78;
+  letter-spacing: -0.06em;
+}
+
+.metodo__lista { border-top: 1px dashed var(--rule); }
+
+.passo {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(14px, 2vw, 30px);
+  align-items: start;
+  padding: clamp(22px, 2.6vw, 34px) 0;
+  border-bottom: 1px dashed var(--rule);
+}
+
+/* a escada: cada linha entra um pouco mais à direita */
+.passo--2 { margin-left: clamp(0px, 2.4vw, 34px); }
+.passo--3 { margin-left: clamp(0px, 4.8vw, 68px); }
+.passo--4 { margin-left: clamp(0px, 7.2vw, 102px); }
+
+.passo__n { font-size: 15px; color: var(--ink-2); padding-top: 4px; }
+.passo__nome { font-size: clamp(19px, 1.7vw, 24px); font-weight: 400; letter-spacing: -0.025em; line-height: 1.15; }
+.passo p { font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+
+@media (max-width: 1023px) {
+  .metodo { grid-template-columns: 1fr; }
+  .metodo__lado { position: static; flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  /* duas colunas: o número ocupa as duas linhas, nome em cima e texto embaixo,
+     senão os dois caem na mesma célula e se sobrepõem */
+  .passo { grid-template-columns: 3rem minmax(0, 1fr); row-gap: 8px; }
+  .passo__n { grid-column: 1; grid-row: 1 / span 2; }
+  .passo__nome { grid-column: 2; grid-row: 1; }
+  .passo p { grid-column: 2; grid-row: 2; }
+  .passo--2, .passo--3, .passo--4 { margin-left: 0; }
+}
+
+/* ==========================================================================
+   FAIXA ESCURA — chamada e contagem
+   ========================================================================== */
+
+.escura { background: var(--ink); color: var(--inv); }
+
+.faixa {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: end;
+  padding: clamp(56px, 8vw, 110px) 0;
+}
+
+.faixa__numero { font-size: clamp(76px, 12vw, 170px); font-weight: 300; line-height: 0.8; letter-spacing: -0.05em; }
+.faixa__nota { font-size: 16px; color: var(--inv-2); margin-top: 18px; max-width: 30ch; }
+.faixa .titulo { max-width: 16ch; }
+
+@media (max-width: 859px) { .faixa { grid-template-columns: 1fr; align-items: start; gap: 40px; } }
+
+/* ==========================================================================
+   MARQUISE de clientes
+   ========================================================================== */
+
+.marquise { border-top: 1px solid var(--rule-inv); border-bottom: 1px solid var(--rule-inv); overflow: hidden; }
+
+.marquise__trilho {
+  display: flex;
+  width: max-content;
+  animation: correr 34s linear infinite;
+}
+
+.marquise__grupo { display: flex; align-items: center; }
+
+.marquise__item {
+  font-size: clamp(22px, 2.6vw, 36px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: var(--inv);
+  padding: 26px clamp(20px, 2.4vw, 36px);
+  white-space: nowrap;
+}
+.marquise__ponto { color: var(--bronze-cl); font-size: 20px; }
+
+@keyframes correr { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) { .marquise__trilho { animation: none; } }
+
+/* ==========================================================================
+   ESTÚDIO
+   ========================================================================== */
+
+/* o depoimento é bem mais curto que o texto ao lado: centrado, não sobra
+   uma coluna vazia embaixo dele */
+.estudio { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--gap) clamp(32px, 5vw, 80px); align-items: center; }
+.estudio__texto { display: flex; flex-direction: column; gap: 22px; }
+.estudio__texto p { color: var(--ink-2); font-size: 17px; line-height: 1.6; }
+.estudio img { border-radius: 18px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.marcas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.marca-item { font-size: 14px; border: 1px solid var(--rule); border-radius: 999px; padding: 9px 18px; }
+
+.depoimento { border-top: 1px solid var(--rule); margin-top: 30px; padding-top: 26px; display: flex; flex-direction: column; gap: 14px; }
+.depoimento blockquote { font-size: clamp(19px, 1.9vw, 25px); font-weight: 300; line-height: 1.25; letter-spacing: -0.025em; }
+.depoimento figcaption { font-size: 15px; color: var(--ink-2); }
+
+@media (max-width: 859px) { .estudio { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   FECHAMENTO E RODAPÉ
+   ========================================================================== */
+
+.fecho { padding: clamp(70px, 11vw, 150px) 0 clamp(50px, 7vw, 90px); }
+.fecho__grade { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--gap); align-items: end; }
+.fecho .display { max-width: 12ch; }
+
+.rodape__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  padding: clamp(44px, 6vw, 74px) 0 0;
+  border-top: 1px solid var(--rule-inv);
+}
+
+.rodape__col h3 { font-size: 15px; font-weight: 500; color: var(--inv-2); margin-bottom: 18px; }
+.rodape__col li { margin-bottom: 10px; font-size: 16px; }
+.rodape__col a { text-decoration: none; }
+.rodape__col a:hover { color: var(--bronze-cl); }
+
+.rodape__legal {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px;
+  margin-top: clamp(40px, 6vw, 72px);
+  padding-bottom: 36px;
+  font-size: 14px; color: var(--inv-2);
+}
+
+/* o e-mail longo não encolhe sozinho e empurra a grade a 320px */
+.rodape__col li, .rodape__col a { overflow-wrap: anywhere; }
+
+@media (max-width: 859px) {
+  .fecho__grade { grid-template-columns: 1fr; align-items: start; gap: 34px; }
+  .rodape__grade { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 479px) { .rodape__grade { grid-template-columns: minmax(0, 1fr); } }
+
+/* ==========================================================================
+   EFEITOS
+   Os mesmos gestos do layout de referência, escritos à mão: título que sobe
+   palavra por palavra, bloco que entra subindo, imagem que abre em cortina,
+   contador que roda e cursor que reage. Sem biblioteca externa.
+   Nada disso é necessário para ler a página: sem script, tudo já está visível.
+   ========================================================================== */
+
+/* palavras do título, dentro de uma máscara */
+.pal {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.pal > i {
+  display: inline-block;
+  font-style: inherit;
+  transform: translateY(110%);
+  transition: transform 1s cubic-bezier(.16, 1, .3, 1);
+  transition-delay: var(--atraso, 0ms);
+}
+.js [data-sobe].dentro .pal > i { transform: none; }
+
+/* blocos que entram subindo */
+.js [data-entra] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1);
+  transition-delay: var(--atraso, 0ms);
+}
+.js [data-entra].dentro { opacity: 1; transform: none; }
+
+/* Imagem que abre em cortina, de baixo para cima.
+   A cortina vai na IMAGEM, nunca no recipiente observado: o IntersectionObserver
+   calcula a interseção depois do recorte, então um recipiente recortado a zero
+   nunca dispara o próprio gatilho que o abriria. */
+.js [data-cortina] img {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.15s cubic-bezier(.16, 1, .3, 1), transform 1.5s cubic-bezier(.16, 1, .3, 1);
+  --s: 1.16;
+}
+.js [data-cortina].dentro img { clip-path: inset(0 0 0 0); --s: 1; }
+
+.obra__moldura img,
+.sangria img { transform: scale(var(--s, 1)); }
+.sangria img { transition: transform 1.5s cubic-bezier(.16, 1, .3, 1); }
+
+/* o cursor do tema: um ponto e um anel que persegue */
+.cursor-ponto, .cursor-anel {
+  position: fixed;
+  top: 0; left: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+.cursor-ponto {
+  width: 7px; height: 7px;
+  background: var(--ink);
+  margin: -3.5px 0 0 -3.5px;
+}
+.cursor-anel {
+  width: 38px; height: 38px;
+  border: 1px solid var(--ink);
+  margin: -19px 0 0 -19px;
+  transition: opacity 240ms ease, width 260ms cubic-bezier(.16,1,.3,1), height 260ms cubic-bezier(.16,1,.3,1),
+              margin 260ms cubic-bezier(.16,1,.3,1), background-color 260ms ease, border-color 260ms ease;
+}
+.cursor-ligado .cursor-ponto, .cursor-ligado .cursor-anel { opacity: 1; }
+.cursor-sobre .cursor-anel {
+  width: 70px; height: 70px;
+  margin: -35px 0 0 -35px;
+  background: rgba(138, 98, 54, 0.12);
+  border-color: var(--bronze);
+}
+.cursor-sobre .cursor-ponto { opacity: 0; }
+/* sobre o escuro o cursor inverte */
+.cursor-claro .cursor-ponto { background: var(--inv); }
+.cursor-claro .cursor-anel { border-color: var(--inv); }
+
+@media (hover: none), (pointer: coarse) { .cursor-ponto, .cursor-anel { display: none; } }
+
+/* o hover da capa vem depois da cortina, senão a escala da revelação vence */
+@media (hover: hover) and (pointer: fine) {
+  .obra__moldura:hover img { --s: 1.035; }
+}
+
+/* quem pediu menos movimento não recebe nenhum */
+@media (prefers-reduced-motion: reduce) {
+  .js [data-sobe] .pal > i,
+  .js [data-entra],
+  .js [data-cortina] { transform: none !important; opacity: 1 !important; clip-path: none !important; transition: none !important; }
+  .marquise__trilho { animation: none; }
+  .cursor-ponto, .cursor-anel { display: none; }
+}
+</style>
+</head>
+<body>
+
+<a class="pular" href="#inicio">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="wrap topo__grade">
+    <a class="logo" href="#inicio">
+      <span class="logo__palavra">VEXIL</span>
+      <span class="logo__linha">
+        <span class="logo__risco" aria-hidden="true"></span>
+        <span class="logo__sub">STUDIO</span>
+      </span>
+    </a>
+    <p class="topo__aposto">Estúdio de marca e desenvolvimento — Novo Hamburgo / RS</p>
+    <nav class="topo__menu" aria-label="Seções">
+      <a class="sub" href="#trabalhos">Trabalhos</a>
+      <a class="sub" href="#servicos">Serviços</a>
+      <a class="sub" href="#metodo">Método</a>
+      <a class="sub" href="#estudio">Estúdio</a>
+      <a class="sub" href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="wrap abertura" aria-labelledby="h1">
+    <h1 class="display abertura__titulo" id="h1" data-sobe>Sites e marcas que as pessoas <span class="apagado regua">seguem</span></h1>
+
+    <div class="abertura__base" data-entra style="--atraso: 260ms">
+      <div></div>
+      <p class="abertura__frase">Seis negócios no ar,<br>todos clicáveis aqui</p>
+      <p class="corpo corpo--fraco">Site, identidade, tráfego pago e vídeo na mesma mão, do briefing até a publicação. Seis frentes que normalmente vivem em fornecedores diferentes, tocadas pela mesma pessoa.</p>
+    </div>
+
+    <div class="abertura__rodape" data-entra style="--atraso: 380ms">
+      <div class="clientes-linha">
+        <a class="sub" href="#trabalhos">Dal Ri</a>
+        <a class="sub" href="#trabalhos">Buriti Garden</a>
+        <a class="sub" href="#trabalhos">Daniela Dalberto</a>
+        <a class="sub" href="#trabalhos">Carolina Guaragna</a>
+        <a class="sub" href="#trabalhos">Cleo Ribeiro</a>
+        <a class="sub" href="#trabalhos">Formato Contábil</a>
+      </div>
+      <a class="pilula" href="#contato">
+        <span class="pilula__texto">Agendar conversa</span>
+        <span class="pilula__seta" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 11 11 4M11 4H5.4M11 4v5.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <div class="sangria" data-cortina>
+    <img src="img/estudio-mesa.jpg" alt="Mesa de trabalho do estúdio com estudos de layout, caneta e amostras de papel" width="1200" height="800">
+  </div>
+
+  <section id="servicos" class="wrap secao" aria-labelledby="h-servicos">
+    <div class="escada" data-sobe style="margin-bottom: clamp(34px, 5vw, 62px)">
+      <h2 class="titulo" id="h-servicos">O que entra</h2>
+      <span class="titulo escada__l2 apagado">em cada <span class="italico">projeto</span></span>
+    </div>
+
+    <div class="servicos" data-grupo>
+      <article class="servico" data-entra>
+        <span class="servico__n">01</span>
+        <h3 class="servico__nome">Sites e<br>sistemas</h3>
+        <p>Site novo do zero, loja virtual ou sistema sob medida. Código próprio, sem construtor.</p>
+        <a class="sub" href="#trabalhos">Ver no portfólio</a>
+      </article>
+      <article class="servico" data-entra>
+        <span class="servico__n">02</span>
+        <h3 class="servico__nome">Identidade<br>visual</h3>
+        <p>Marca, tipografia, paleta e os materiais que sustentam a promessa em cada ponto de contato.</p>
+        <a class="sub" href="#estudio">Como trabalho</a>
+      </article>
+      <article class="servico" data-entra>
+        <span class="servico__n">03</span>
+        <h3 class="servico__nome">Tráfego<br>pago</h3>
+        <p>Campanhas montadas e acompanhadas mês a mês, com leitura de resultado e ajuste de rota.</p>
+        <a class="sub" href="#trabalhos">Ver no portfólio</a>
+      </article>
+      <article class="servico" data-entra>
+        <span class="servico__n">04</span>
+        <h3 class="servico__nome">CRM e<br>integração</h3>
+        <p>O lead que chega pelo site entra no CRM e não se perde. Integração e fluxo ponta a ponta.</p>
+        <a class="sub" href="#trabalhos">Ver no portfólio</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="trabalhos" class="wrap secao" style="padding-top: 0" aria-labelledby="h-trabalhos">
+    <div class="escada" data-sobe>
+      <h2 class="titulo apagado" id="h-trabalhos">Seis negócios com a</h2>
+      <span class="titulo escada__l2">presença <span class="italico apagado">digital refeita</span></span>
+      <span class="titulo escada__l3 apagado">
+        <span>e no ar</span>
+        <a class="pilula" href="#contato">
+          <span class="pilula__texto" style="color: var(--ink); border-color: var(--ink)">Quero o meu</span>
+          <span class="pilula__seta" style="color: var(--ink); border-color: var(--ink)" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M4 11 11 4M11 4H5.4M11 4v5.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </span>
+    </div>
+
+    <div class="obras" data-grupo>
+
+      <article class="obra" data-entra>
+        <a class="obra__moldura" data-cortina href="https://dalrinegociosimobiliarios.com.br/" target="_blank" rel="noopener">
+          <img src="img/dal-ri.jpg" alt="Página inicial do site da Dal Ri Negócios Imobiliários" width="1440" height="900">
+        </a>
+        <h3 class="obra__nome">Dal Ri</h3>
+        <p class="obra__meta">Imobiliária de alto padrão — site, CRM e tráfego pago</p>
+      </article>
+
+      <article class="obra" data-entra>
+        <a class="obra__moldura" data-cortina href="https://valmirdasilva.github.io/portfolio/buriti-garden-main/index.html" target="_blank" rel="noopener">
+          <img src="img/buriti-garden.jpg" alt="Página inicial do site do Residencial Buriti Garden Premium" width="1440" height="900" loading="lazy">
+        </a>
+        <h3 class="obra__nome">Buriti Garden</h3>
+        <p class="obra__meta">Loteamento de alto padrão — lançamento e captação</p>
+      </article>
+
+      <article class="obra" data-entra>
+        <a class="obra__moldura" data-cortina href="https://valmirdasilva.github.io/portfolio/Daniela-dalberto-main/index.html" target="_blank" rel="noopener">
+          <img src="img/daniela-dalberto.jpg" alt="Página inicial do site da advogada Daniela Dalberto" width="1440" height="900" loading="lazy">
+        </a>
+        <h3 class="obra__nome">Daniela Dalberto</h3>
+        <p class="obra__meta">Advocacia de família e sucessões — reformulação de site</p>
+      </article>
+
+      <article class="obra" data-entra>
+        <a class="obra__moldura" data-cortina href="https://valmirdasilva.github.io/portfolio/Carolina-Guaragna-main/index.html" target="_blank" rel="noopener">
+          <img src="img/carolina-guaragna.jpg" alt="Página inicial do site de Carolina Guaragna" width="1440" height="900" loading="lazy">
+        </a>
+        <h3 class="obra__nome">Carolina Guaragna</h3>
+        <p class="obra__meta">Psicologia e psicanálise — site e agendamento</p>
+      </article>
+
+      <article class="obra" data-entra>
+        <a class="obra__moldura" data-cortina href="https://valmirdasilva.github.io/portfolio/cleo-ribeiro-main/index.html" target="_blank" rel="noopener">
+          <img src="img/cleo-ribeiro.jpg" alt="Página inicial do site de Cleo Ribeiro" width="1440" height="900" loading="lazy">
+        </a>
+        <h3 class="obra__nome">Cleo Ribeiro</h3>
+        <p class="obra__meta">Psicologia clínica — adultos, crianças e seção infantil</p>
+      </article>
+
+      <article class="obra" data-entra>
+        <a class="obra__moldura" data-cortina href="https://valmirdasilva.github.io/portfolio/formato-contabil-main/index.html" target="_blank" rel="noopener">
+          <img src="img/formato-contabil.jpg" alt="Página inicial do site da Formato Contábil" width="1440" height="900" loading="lazy">
+        </a>
+        <h3 class="obra__nome">Formato Contábil</h3>
+        <p class="obra__meta">Contabilidade — prova social e Área do Cliente</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="metodo" class="wrap secao" style="padding-top: 0" aria-labelledby="h-metodo">
+    <div class="metodo">
+      <div class="metodo__lado">
+        <p class="etiqueta" id="h-metodo">Método,<br>na ordem</p>
+        <p class="metodo__numeral" data-entra>04</p>
+      </div>
+
+      <div class="metodo__lista" data-grupo>
+        <div data-entra class="passo passo--1">
+          <p class="passo__n">01</p>
+          <h3 class="passo__nome">Diagnóstico</h3>
+          <p>Mercado, concorrência e o que seus clientes já dizem sobre você. Uma leitura honesta de onde a marca está.</p>
+        </div>
+        <div data-entra class="passo passo--2">
+          <p class="passo__n">02</p>
+          <h3 class="passo__nome">Posição</h3>
+          <p>Para quem, contra quem e com que promessa. É a etapa que define preço, discurso e o que não fazer.</p>
+        </div>
+        <div data-entra class="passo passo--3">
+          <p class="passo__n">03</p>
+          <h3 class="passo__nome">Sistema</h3>
+          <p>Marca, verbal e visual: nome, identidade, tom de voz e os materiais que sustentam a promessa.</p>
+        </div>
+        <div data-entra class="passo passo--4">
+          <p class="passo__n">04</p>
+          <h3 class="passo__nome">Ativação</h3>
+          <p>Conteúdo e mídia paga levando a marca para fora, com leitura de resultado mês a mês.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="escura" aria-labelledby="h-contagem">
+    <div class="wrap faixa">
+      <div>
+        <h2 class="titulo" id="h-contagem" data-sobe>Seis marcas que saíram do genérico</h2>
+        <a class="pilula pilula--inv" href="#contato" style="margin-top: clamp(28px, 4vw, 44px)">
+          <span class="pilula__texto">Começar o seu</span>
+          <span class="pilula__seta" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 11 11 4M11 4H5.4M11 4v5.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+      <div>
+        <p class="faixa__numero" data-contar="6">06</p>
+        <p class="faixa__nota">negócios no ar, do site à gestão de tráfego, todos clicáveis nesta página.</p>
+      </div>
+    </div>
+
+    <div class="marquise">
+      <div class="marquise__trilho">
+        <div class="marquise__grupo" aria-hidden="false">
+          <span class="marquise__item">Dal Ri</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Buriti Garden</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Daniela Dalberto</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Carolina Guaragna</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Cleo Ribeiro</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Formato Contábil</span><span class="marquise__item marquise__ponto">●</span>
+        </div>
+        <div class="marquise__grupo" aria-hidden="true">
+          <span class="marquise__item">Dal Ri</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Buriti Garden</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Daniela Dalberto</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Carolina Guaragna</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Cleo Ribeiro</span><span class="marquise__item marquise__ponto">●</span>
+          <span class="marquise__item">Formato Contábil</span><span class="marquise__item marquise__ponto">●</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="estudio" class="wrap secao" aria-labelledby="h-estudio">
+    <div class="estudio">
+      <div class="estudio__texto">
+        <p class="etiqueta" style="color: var(--ink-2)">O estúdio</p>
+        <h2 class="titulo" id="h-estudio" data-sobe>Quem ergue<br>o estandarte</h2>
+        <p>Vexillum era o estandarte erguido à frente da legião romana: o sinal que dizia quem avançava e para onde. É o que construo para marcas que já têm produto bom e ainda não têm quem as siga.</p>
+        <p>IA entra no fluxo como ferramenta, nunca como piloto automático: ela acelera o trabalho pesado, e a curadoria e a decisão do que fica são minhas.</p>
+        <div class="marcas">
+          <span class="marca-item">6 negócios no ar</span>
+          <span class="marca-item">dev + design</span>
+          <span class="marca-item">Novo Hamburgo / RS</span>
+        </div>
+      </div>
+      <div>
+        <!-- PENDENTE: depoimento real de cliente. Não publicar com o texto de marcador abaixo. -->
+        <figure class="depoimento" style="border-top: 0; margin-top: 0; padding-top: 0">
+          <blockquote>"[Depoimento de um cliente: uma frase curta sobre o que mudou depois do trabalho.]"</blockquote>
+          <figcaption>[Nome] · [cargo, empresa]</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contato" class="escura">
+  <div class="wrap fecho">
+    <div class="fecho__grade">
+      <h2 class="display" data-sobe>Vamos começar o <span class="apagado">seu</span></h2>
+      <div>
+        <p class="corpo" style="color: var(--inv-2); margin-bottom: 26px; max-width: 34ch">Uma conversa de 30 minutos basta para saber se faz sentido. Sem apresentação de agência.</p>
+        <a class="pilula pilula--inv" href="mailto:valmirdasilva1999@gmail.com">
+          <span class="pilula__texto">Agendar conversa</span>
+          <span class="pilula__seta" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 11 11 4M11 4H5.4M11 4v5.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="rodape__grade">
+      <div class="rodape__col">
+        <a class="logo" href="#inicio" style="color: var(--inv)">
+          <span class="logo__palavra">VEXIL</span>
+          <span class="logo__linha">
+            <span class="logo__risco" style="background: var(--bronze-cl)" aria-hidden="true"></span>
+            <span class="logo__sub" style="color: var(--bronze-cl)">STUDIO</span>
+          </span>
+        </a>
+      </div>
+      <div class="rodape__col">
+        <h3>Páginas</h3>
+        <ul>
+          <li><a class="sub" href="#trabalhos">Trabalhos</a></li>
+          <li><a class="sub" href="#servicos">Serviços</a></li>
+          <li><a class="sub" href="#metodo">Método</a></li>
+          <li><a class="sub" href="#estudio">Estúdio</a></li>
+        </ul>
+      </div>
+      <div class="rodape__col">
+        <h3>Trabalhos no ar</h3>
+        <ul>
+          <li><a class="sub" href="https://dalrinegociosimobiliarios.com.br/" target="_blank" rel="noopener">Dal Ri</a></li>
+          <li><a class="sub" href="https://valmirdasilva.github.io/portfolio/buriti-garden-main/index.html" target="_blank" rel="noopener">Buriti Garden</a></li>
+          <li><a class="sub" href="https://valmirdasilva.github.io/portfolio/Daniela-dalberto-main/index.html" target="_blank" rel="noopener">Daniela Dalberto</a></li>
+          <li><a class="sub" href="https://valmirdasilva.github.io/portfolio/formato-contabil-main/index.html" target="_blank" rel="noopener">Formato Contábil</a></li>
+        </ul>
+      </div>
+      <div class="rodape__col">
+        <h3>Contato</h3>
+        <ul>
+          <li><a class="sub" href="mailto:valmirdasilva1999@gmail.com">valmirdasilva1999@gmail.com</a></li>
+          <li>Novo Hamburgo / RS</li>
+          <li>Presencial e remoto</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rodape__legal">
+      <span>© 2026 Vexil Studio</span>
+      <span>Novo Hamburgo / RS — presencial e remoto</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   Efeitos. Progressive enhancement: a classe .js só entra se o script rodar,
+   então sem JS, com erro ou com movimento reduzido a página fica legível e
+   completa. Nada aqui segura a rolagem.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var menosMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var raiz = document.documentElement;
+  raiz.classList.add('js');
+
+  /* ---------- 1. títulos: cada palavra sobe de dentro de uma máscara ---------- */
+  function fatiar(alvo) {
+    var i = 0;
+    var andar = function (no) {
+      var filhos = Array.prototype.slice.call(no.childNodes);
+      filhos.forEach(function (n) {
+        if (n.nodeType === 3) {
+          var texto = n.textContent;
+          if (!texto.trim()) return;
+          var frag = document.createDocumentFragment();
+          texto.split(/(\s+)/).forEach(function (pedaco) {
+            if (!pedaco) return;
+            if (!pedaco.trim()) { frag.appendChild(document.createTextNode(pedaco)); return; }
+            var fora = document.createElement('span');
+            fora.className = 'pal';
+            var dentro = document.createElement('i');
+            dentro.textContent = pedaco;
+            dentro.style.setProperty('--atraso', (i * 55) + 'ms');
+            i++;
+            fora.appendChild(dentro);
+            frag.appendChild(fora);
+          });
+          no.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && !n.classList.contains('pal') && n.tagName !== 'BR') {
+          andar(n);
+        }
+      });
+    };
+    andar(alvo);
+  }
+
+  if (!menosMovimento) {
+    document.querySelectorAll('[data-sobe]').forEach(fatiar);
+  }
+
+  /* ---------- 2. quem entra na tela acende ---------- */
+  var observador = null;
+  if ('IntersectionObserver' in window && !menosMovimento) {
+    observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('dentro');
+        observador.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+    document.querySelectorAll('[data-sobe], [data-entra], [data-cortina]').forEach(function (el) {
+      observador.observe(el);
+    });
+
+    /* escalona os irmãos de um mesmo grupo */
+    document.querySelectorAll('[data-grupo]').forEach(function (grupo) {
+      Array.prototype.slice.call(grupo.children).forEach(function (filho, n) {
+        filho.style.setProperty('--atraso', (n * 90) + 'ms');
+      });
+    });
+  } else {
+    document.querySelectorAll('[data-sobe], [data-entra], [data-cortina]').forEach(function (el) {
+      el.classList.add('dentro');
+    });
+  }
+
+  /* a abertura não espera rolagem: entra ao carregar */
+  requestAnimationFrame(function () {
+    document.querySelectorAll('.abertura [data-sobe], .abertura [data-entra]').forEach(function (el) {
+      el.classList.add('dentro');
+    });
+  });
+
+  /* ---------- 3. o contador roda uma vez ---------- */
+  document.querySelectorAll('[data-contar]').forEach(function (el) {
+    var fim = parseInt(el.getAttribute('data-contar'), 10);
+    if (isNaN(fim)) return;
+    var pronto = false;
+    var rodar = function () {
+      if (pronto) return;
+      pronto = true;
+      if (menosMovimento) { el.textContent = ('0' + fim).slice(-2); return; }
+      var t0 = null, dur = 1100;
+      var passo = function (t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0) / dur);
+        var suave = 1 - Math.pow(1 - p, 3);
+        el.textContent = ('0' + Math.round(fim * suave)).slice(-2);
+        if (p < 1) requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es, o) {
+        es.forEach(function (e) { if (e.isIntersecting) { rodar(); o.disconnect(); } });
+      }, { threshold: 0.6 }).observe(el);
+    } else { rodar(); }
+  });
+
+  /* ---------- 4. o cursor: um ponto e um anel que persegue ---------- */
+  var fino = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (fino && !menosMovimento) {
+    var ponto = document.createElement('div'); ponto.className = 'cursor-ponto';
+    var anel = document.createElement('div');  anel.className = 'cursor-anel';
+    document.body.appendChild(ponto); document.body.appendChild(anel);
+
+    var px = 0, py = 0, ax = 0, ay = 0, ligado = false;
+
+    window.addEventListener('mousemove', function (ev) {
+      px = ev.clientX; py = ev.clientY;
+      if (!ligado) { ligado = true; ax = px; ay = py; raiz.classList.add('cursor-ligado'); }
+      ponto.style.transform = 'translate3d(' + px + 'px,' + py + 'px,0)';
+
+      var sob = document.elementFromPoint(px, py);
+      raiz.classList.toggle('cursor-sobre', !!(sob && sob.closest('a, button, .pilula, .obra__moldura')));
+      raiz.classList.toggle('cursor-claro', !!(sob && sob.closest('.escura')));
+    }, { passive: true });
+
+    window.addEventListener('mouseout', function (e) {
+      if (!e.relatedTarget) raiz.classList.remove('cursor-ligado');
+    });
+
+    (function seguir() {
+      ax += (px - ax) * 0.16;
+      ay += (py - ay) * 0.16;
+      anel.style.transform = 'translate3d(' + ax + 'px,' + ay + 'px,0)';
+      requestAnimationFrame(seguir);
+    })();
+  }
+})();
+</script>
+
+</body>
+</html>
