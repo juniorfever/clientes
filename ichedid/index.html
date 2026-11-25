@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICHEDID ARQ. | Arquitetura em Passo Fundo, RS</title>
+<meta name="description" content="ICHEDID Arquitetura, Passo Fundo RS. Design predial, design residencial, interior design e design de produto. Materiais nobres, sofisticados e atemporais.">
+<meta property="og:title" content="ICHEDID ARQ.">
+<meta property="og:description" content="Arquitetura em Passo Fundo, RS. Design predial, residencial, interiores e produto.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="assets/marca-ichd.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grao" aria-hidden="true"></div>
+
+<header class="topo" id="topo">
+  <a class="marca" href="#inicio" aria-label="ICHEDID ARQ., início">
+    <span class="marca-txt">ICHEDID ARQ.</span>
+  </a>
+  <nav class="nav">
+    <a href="#predial"><span><em>Predial</em></span></a>
+    <a href="#residencial"><span><em>Residencial</em></span></a>
+    <a href="#interior"><span><em>Interior</em></span></a>
+    <a href="#produto"><span><em>Produto</em></span></a>
+    <a href="#contato"><span><em>Contato</em></span></a>
+  </nav>
+  <div class="progresso" aria-hidden="true"><i></i></div>
+</header>
+
+<!-- 1. PORTAL: primeira tela limpa, so a marca quadrada --------------- -->
+<section class="portal" id="inicio">
+  <canvas class="particulas" aria-hidden="true"></canvas>
+  <div class="portal-marca">
+    <span class="monograma grande" aria-hidden="true"><i>I</i><i class="sub">C</i><i>H</i><i>D</i></span>
+    <h1 class="oculto">ICHEDID ARQ. Arquitetura em Passo Fundo, RS</h1>
+  </div>
+  <a class="descer" href="#assinatura" aria-label="Ver o escritório"><span></span></a>
+</section>
+
+<!-- 2. ASSINATURA ------------------------------------------------------ -->
+<section class="assina-bloco" id="assinatura">
+  <span class="eti">Passo Fundo &mdash; RS</span>
+  <p class="assinatura">ICHEDID ARQ.</p>
+  <p class="linha-finos">
+    <strong>FINOS DETALHES.</strong> Materiais nobres, sofisticados e atemporais como:
+    pedra, madeira maciça, concreto, vidro e metal. Design elegante e conceito contemporâneo.
+  </p>
+  <button class="cena alta" data-par="0.16" data-abre="0" type="button" aria-label="Abrir galeria: residência em concreto aparente">
+    <img src="assets/hero.jpg" alt="Residência em concreto aparente com volume em balanço" fetchpriority="high">
+    <span class="lupa" aria-hidden="true"></span>
+  </button>
+  <div class="esteira" aria-hidden="true">
+    <div class="esteira-pista">
+      <span>PEDRA</span><span>MADEIRA MACIÇA</span><span>CONCRETO</span><span>VIDRO</span><span>METAL</span>
+      <span>PEDRA</span><span>MADEIRA MACIÇA</span><span>CONCRETO</span><span>VIDRO</span><span>METAL</span>
+      <span>PEDRA</span><span>MADEIRA MACIÇA</span><span>CONCRETO</span><span>VIDRO</span><span>METAL</span>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- 01 DESIGN PREDIAL -------------------------------------------------- -->
+  <section class="bloco escuro" id="predial">
+    <div class="bloco-topo">
+      <div class="lado">
+        <span class="eti">01 / Design predial</span>
+        <ul class="linhas"><li>Institucional</li><li>Museus</li><li>Centros profissionais</li><li>Residenciais</li></ul>
+      </div>
+      <h2>DESIGN<br>PREDIAL</h2>
+    </div>
+    <div class="duo">
+      <button class="cena alta" data-par="0.18" data-abre="1" type="button" aria-label="Abrir galeria: torre de uso misto">
+        <img src="assets/predial-01.jpg" alt="Torre de uso misto com fachada curva ao entardecer" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="2" type="button" aria-label="Abrir galeria: edifício vertical com brises">
+        <img src="assets/predial-03.jpg" alt="Edifício vertical com brises e varandas vegetadas" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="duo">
+      <button class="cena" data-abre="3" type="button" aria-label="Abrir galeria: embasamento comercial">
+        <img src="assets/predial-02.jpg" alt="Embasamento comercial de edifício em esquina arborizada" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="4" type="button" aria-label="Abrir galeria: fachada em pórticos de concreto">
+        <img src="assets/predial-04.jpg" alt="Fachada em pórticos de concreto com vegetação entre os vãos" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 02 DESIGN RESIDENCIAL ---------------------------------------------- -->
+  <section class="bloco" id="residencial">
+    <div class="bloco-topo">
+      <div class="lado">
+        <span class="eti">02 / Design residencial</span>
+        <ul class="linhas"><li>Concreto</li><li>Madeira maciça</li><li>Pedra</li></ul>
+      </div>
+      <h2>DESIGN<br>RESIDENCIAL</h2>
+    </div>
+    <button class="cena sangra" data-par="0.14" data-abre="5" type="button" aria-label="Abrir galeria: residência de cobertura inclinada">
+      <img src="assets/resid-04.jpg" alt="Residência de cobertura inclinada em meio à mata" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+    </button>
+    <div class="duo">
+      <button class="cena" data-abre="6" type="button" aria-label="Abrir galeria: casa com espelho d'água">
+        <img src="assets/resid-01.jpg" alt="Casa com cobertura ampla e espelho d'água ao anoitecer" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="7" type="button" aria-label="Abrir galeria: casa com cobertura de palha">
+        <img src="assets/resid-02.jpg" alt="Casa com cobertura de palha e piscina entre árvores" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+    <figure class="cena filme" data-par="0.12">
+      <video src="assets/encosta.mp4" autoplay muted loop playsinline preload="metadata"
+             poster="assets/resid-05.jpg" aria-label="Casa suspensa sobre encosta de pedra, em movimento"></video>
+    </figure>
+    <div class="duo">
+      <button class="cena" data-abre="8" type="button" aria-label="Abrir galeria: volume refletido no espelho d'água">
+        <img src="assets/resid-03.jpg" alt="Volume baixo refletido no espelho d'água" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="9" type="button" aria-label="Abrir galeria: piso em pedra assentada">
+        <img src="assets/detalhe-01.jpg" alt="Piso em pedra assentada, detalhe de junta" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 03 INTERIOR DESIGN --------------------------------------------------- -->
+  <section class="bloco escuro" id="interior">
+    <div class="bloco-topo">
+      <div class="lado">
+        <span class="eti">03 / Interior design</span>
+        <ul class="linhas"><li>Residencial</li><li>Empresarial</li><li>Comercial</li></ul>
+      </div>
+      <h2>INTERIOR<br>DESIGN</h2>
+    </div>
+    <div class="duo">
+      <button class="cena alta" data-par="0.16" data-abre="10" type="button" aria-label="Abrir galeria: estar com marcenaria em madeira">
+        <img src="assets/interior-01.jpg" alt="Estar integrado com marcenaria em madeira e iluminação quente" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="11" type="button" aria-label="Abrir galeria: estante em arcos">
+        <img src="assets/interior-04.jpg" alt="Estante em arcos com peças de cerâmica" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="trinca">
+      <button class="cena" data-abre="12" type="button" aria-label="Abrir galeria: sala aberta para o jardim">
+        <img src="assets/interior-02.jpg" alt="Sala aberta para o jardim com esquadria metálica" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="13" type="button" aria-label="Abrir galeria: dormitório com painéis de madeira">
+        <img src="assets/interior-03.jpg" alt="Dormitório com painéis de madeira e vista para a mata" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="14" type="button" aria-label="Abrir galeria: cozinha com ilha em pedra">
+        <img src="assets/interior-05.jpg" alt="Cozinha com ilha em pedra e vista enquadrada" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+    <button class="cena sangra" data-par="0.12" data-abre="15" type="button" aria-label="Abrir galeria: sala de pé-direito duplo">
+      <img src="assets/interior-06.jpg" alt="Sala ampla com pé-direito duplo e peça de arte ao fundo" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+    </button>
+  </section>
+
+  <!-- 04 DESIGN DE PRODUTO -------------------------------------------------- -->
+  <section class="bloco" id="produto">
+    <div class="bloco-topo">
+      <div class="lado">
+        <span class="eti">04 / Design de produto</span>
+        <ul class="linhas"><li>Residencial</li><li>Profissional</li><li>Comercial</li><li>Lazer</li></ul>
+      </div>
+      <h2>DESIGN<br>DE PRODUTO</h2>
+    </div>
+    <div class="banca">
+      <button class="cena" data-abre="16" type="button" aria-label="Abrir galeria: estudo de poltronas">
+        <img src="assets/produto-01.jpg" alt="Estudo de poltronas em fundo neutro" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="17" type="button" aria-label="Abrir galeria: sofá de dois lugares">
+        <img src="assets/produto-02.jpg" alt="Sofá de dois lugares, estudo em cinza" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="18" type="button" aria-label="Abrir galeria: sofá em L">
+        <img src="assets/produto-03.jpg" alt="Sofá em L, estudo em branco" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="19" type="button" aria-label="Abrir galeria: sofá modular">
+        <img src="assets/produto-04.jpg" alt="Sofá modular, estudo em tecido escuro" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="20" type="button" aria-label="Abrir galeria: estudo volumétrico">
+        <img src="assets/estudo-01.jpg" alt="Estudo volumétrico em branco de residência" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+      <button class="cena" data-abre="21" type="button" aria-label="Abrir galeria: maquete de estudo urbano">
+        <img src="assets/estudo-02.jpg" alt="Maquete física de estudo urbano" loading="lazy"><span class="lupa" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -------------------------------------------------------- -->
+  <section class="declara escuro" id="como">
+    <span class="monograma agua" aria-hidden="true"><i>I</i><i class="sub">C</i><i>H</i><i>D</i></span>
+    <div class="declara-grade">
+      <div>
+        <span class="eti">Como funciona</span>
+        <p class="frase">Estrutura altamente profissional e <mark>experiente</mark></p>
+      </div>
+      <div class="declara-corpo">
+        <p class="guia">Diferindo no conhecimento e nas ferramentas tecnológicas para apoiar as
+           tomadas de decisões em projetos.</p>
+        <hr class="fio">
+        <p>A complexidade e a diversidade de cada projeto é o que nos motiva, valorizando a ética
+           e o comprometimento com o cliente.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SOBRE NÓS ---------------------------------------------------------------- -->
+<section class="sobre" id="sobre">
+  <div class="sobre-cabeca">
+    <span class="eti">Sobre nós</span>
+    <h2>A <strong>ICHEDID ARQUITETURA</strong> está situada na cidade de <strong>Passo Fundo RS</strong></h2>
+  </div>
+  <div class="sobre-grade">
+    <figure class="retrato cena" data-par="0.14"><img src="assets/isac.jpg" alt="Isac Chedid Saud Filho" loading="lazy"></figure>
+    <div class="sobre-txt">
+      <p class="guia">Tem como principal característica a aplicação das técnicas mais inovadoras de
+         projeto arquitetônico, com uma profunda preocupação de traduzir as necessidades projetuais
+         de nossos clientes.</p>
+      <p>Desenvolvemos projetos de forma criativa, ética e humana, buscando o reconhecimento pela
+         qualidade e singularidade de nossos projetos e serviços.</p>
+      <p class="nome-isac">ISAC CHEDID SAUD Fº</p>
+    </div>
+  </div>
+
+  <ol class="trilha" id="trilha">
+    <li>
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="trilha-rot">Graduação</span>
+      <p>Arquiteto e urbanista<br><small>Universidade Luterana do Brasil</small></p>
+    </li>
+    <li>
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="trilha-rot">Mestrado</span>
+      <p>Engenharia com ênfase em meio ambiente, energia e materiais<br><small>ULBRA, Brasil</small></p>
+    </li>
+    <li>
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="trilha-rot">Especialista</span>
+      <p>Design de superfície<br><small>Nagoya Technology Institute, Japão</small></p>
+    </li>
+    <li>
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="trilha-rot">Especialista</span>
+      <p>Design de interiores<br><small>Escuola Politecnica di Milano, Itália</small></p>
+    </li>
+    <li>
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="trilha-rot">Especialista</span>
+      <p>Design de produto<br><small>Universidade de Caxias do Sul, Brasil</small></p>
+    </li>
+    <li>
+      <span class="ponto" aria-hidden="true"></span>
+      <span class="trilha-rot">Docência</span>
+      <p>Atuou por mais de uma década<br><small>em instituições universitárias</small></p>
+    </li>
+  </ol>
+</section>
+
+<!-- CONTATO -------------------------------------------------------------------- -->
+<section class="contato escuro" id="contato">
+  <div class="contato-grade">
+    <div>
+      <span class="eti">Contato</span>
+      <h2>FALE COM<br>O ESCRITÓRIO</h2>
+    </div>
+    <div class="contato-lado">
+      <div class="dados">
+        <div><span>Endereço</span><p>Nº 52, Rua Doutor Carlos Alberto Beninca<br>CEP 99072-330, Passo Fundo, RS</p></div>
+        <div><span>Telefone</span><p><a href="tel:+5554999660180">54 99966 0180</a></p></div>
+      </div>
+      <a class="botao claro" href="https://wa.me/5554999660180" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="monograma peq" aria-hidden="true"><i>I</i><i class="sub">C</i><i>H</i><i>D</i></span>
+  <p>ICHEDID ARQUITETURA</p>
+  <p>Passo Fundo, RS</p>
+</footer>
+
+<!-- galeria em slide ------------------------------------------------------------ -->
+<div class="slide" id="slide" role="dialog" aria-modal="true" aria-label="Galeria de projetos" hidden>
+  <button class="slide-fecha" type="button" aria-label="Fechar galeria"></button>
+  <button class="slide-nav ant" type="button" aria-label="Imagem anterior"></button>
+  <button class="slide-nav prox" type="button" aria-label="Próxima imagem"></button>
+  <figure class="slide-palco"><img src="assets/hero.jpg" alt="" loading="lazy"></figure>
+  <p class="slide-conta"><b>1</b><i>/</i><u>22</u></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
